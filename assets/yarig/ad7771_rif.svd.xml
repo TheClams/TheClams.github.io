@@ -1,0 +1,2935 @@
+<device schemaVersion="1.3" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="CMSIS-SVD.xsd" >
+  <vendor>Semtech</vendor>
+  <name>ad7771</name>
+  <version>3.2</version>
+  <description>-</description>
+  <addressUnitBits>8</addressUnitBits>
+  <width>8</width>
+  <access>read-write</access>
+  <peripherals>
+    <peripheral>
+      <name>ad7771</name>
+      <description>-</description>
+      <baseAddress>0x0</baseAddress>
+      <addressBlock>
+        <offset>0</offset>
+        <size>0x80</size>
+        <usage>registers</usage>
+      </addressBlock>
+      <registers>
+        <register>
+          <name>channel_cfg0</name>
+          <description>Channel 0 configuration</description>
+          <addressOffset>0x0</addressOffset>
+          <size>8</size>
+          <resetValue>0x0</resetValue>
+          <fields>
+            <field>
+              <name>bias0</name>
+              <description>Hidden tuning register</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>4</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>rx0</name>
+              <description>Channel meter Mux RX mode</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>ref_mon0</name>
+              <description>Channel used as reference monitor</description>
+              <bitOffset>5</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>gain0</name>
+              <description>AFE Gain (power of 2)</description>
+              <bitOffset>6</bitOffset>
+              <bitWidth>2</bitWidth>
+              <access>read-write</access>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>channel_cfg1</name>
+          <description>Channel 1 configuration</description>
+          <addressOffset>0x1</addressOffset>
+          <size>8</size>
+          <resetValue>0x0</resetValue>
+          <fields>
+            <field>
+              <name>bias1</name>
+              <description>Hidden tuning register</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>4</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>rx1</name>
+              <description>Channel meter Mux RX mode</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>ref_mon1</name>
+              <description>Channel used as reference monitor</description>
+              <bitOffset>5</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>gain1</name>
+              <description>AFE Gain (power of 2)</description>
+              <bitOffset>6</bitOffset>
+              <bitWidth>2</bitWidth>
+              <access>read-write</access>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>channel_cfg2</name>
+          <description>Channel 2 configuration</description>
+          <addressOffset>0x2</addressOffset>
+          <size>8</size>
+          <resetValue>0x0</resetValue>
+          <fields>
+            <field>
+              <name>bias2</name>
+              <description>Hidden tuning register</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>4</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>rx2</name>
+              <description>Channel meter Mux RX mode</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>ref_mon2</name>
+              <description>Channel used as reference monitor</description>
+              <bitOffset>5</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>gain2</name>
+              <description>AFE Gain (power of 2)</description>
+              <bitOffset>6</bitOffset>
+              <bitWidth>2</bitWidth>
+              <access>read-write</access>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>channel_cfg3</name>
+          <description>Channel 3 configuration</description>
+          <addressOffset>0x3</addressOffset>
+          <size>8</size>
+          <resetValue>0x0</resetValue>
+          <fields>
+            <field>
+              <name>bias3</name>
+              <description>Hidden tuning register</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>4</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>rx3</name>
+              <description>Channel meter Mux RX mode</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>ref_mon3</name>
+              <description>Channel used as reference monitor</description>
+              <bitOffset>5</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>gain3</name>
+              <description>AFE Gain (power of 2)</description>
+              <bitOffset>6</bitOffset>
+              <bitWidth>2</bitWidth>
+              <access>read-write</access>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>channel_cfg4</name>
+          <description>Channel 4 configuration</description>
+          <addressOffset>0x4</addressOffset>
+          <size>8</size>
+          <resetValue>0x0</resetValue>
+          <fields>
+            <field>
+              <name>bias4</name>
+              <description>Hidden tuning register</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>4</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>rx4</name>
+              <description>Channel meter Mux RX mode</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>ref_mon4</name>
+              <description>Channel used as reference monitor</description>
+              <bitOffset>5</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>gain4</name>
+              <description>AFE Gain (power of 2)</description>
+              <bitOffset>6</bitOffset>
+              <bitWidth>2</bitWidth>
+              <access>read-write</access>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>channel_cfg5</name>
+          <description>Channel 5 configuration</description>
+          <addressOffset>0x5</addressOffset>
+          <size>8</size>
+          <resetValue>0x0</resetValue>
+          <fields>
+            <field>
+              <name>bias5</name>
+              <description>Hidden tuning register</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>4</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>rx5</name>
+              <description>Channel meter Mux RX mode</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>ref_mon5</name>
+              <description>Channel used as reference monitor</description>
+              <bitOffset>5</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>gain5</name>
+              <description>AFE Gain (power of 2)</description>
+              <bitOffset>6</bitOffset>
+              <bitWidth>2</bitWidth>
+              <access>read-write</access>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>channel_cfg6</name>
+          <description>Channel 6 configuration</description>
+          <addressOffset>0x6</addressOffset>
+          <size>8</size>
+          <resetValue>0x0</resetValue>
+          <fields>
+            <field>
+              <name>bias6</name>
+              <description>Hidden tuning register</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>4</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>rx6</name>
+              <description>Channel meter Mux RX mode</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>ref_mon6</name>
+              <description>Channel used as reference monitor</description>
+              <bitOffset>5</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>gain6</name>
+              <description>AFE Gain (power of 2)</description>
+              <bitOffset>6</bitOffset>
+              <bitWidth>2</bitWidth>
+              <access>read-write</access>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>channel_cfg7</name>
+          <description>Channel 7 configuration</description>
+          <addressOffset>0x7</addressOffset>
+          <size>8</size>
+          <resetValue>0x0</resetValue>
+          <fields>
+            <field>
+              <name>bias7</name>
+              <description>Hidden tuning register</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>4</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>rx7</name>
+              <description>Channel meter Mux RX mode</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>ref_mon7</name>
+              <description>Channel used as reference monitor</description>
+              <bitOffset>5</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>gain7</name>
+              <description>AFE Gain (power of 2)</description>
+              <bitOffset>6</bitOffset>
+              <bitWidth>2</bitWidth>
+              <access>read-write</access>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>clock_disable</name>
+          <description>Clock disable per channel</description>
+          <addressOffset>0x8</addressOffset>
+          <size>8</size>
+          <resetValue>0x0</resetValue>
+          <fields>
+            <field>
+              <name>disable_ch0</name>
+              <description>Channel 0 Disable</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>disable_ch1</name>
+              <description>Channel 1 Disable</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>disable_ch2</name>
+              <description>Channel 2 Disable</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>disable_ch3</name>
+              <description>Channel 3 Disable</description>
+              <bitOffset>3</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>disable_ch4</name>
+              <description>Channel 4 Disable</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>disable_ch5</name>
+              <description>Channel 5 Disable</description>
+              <bitOffset>5</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>disable_ch6</name>
+              <description>Channel 6 Disable</description>
+              <bitOffset>6</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>disable_ch7</name>
+              <description>Channel 7 Disable</description>
+              <bitOffset>7</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>channel_sync_offset0</name>
+          <description>Channel 0 Sync offset</description>
+          <addressOffset>0x9</addressOffset>
+          <size>8</size>
+          <resetValue>0x0</resetValue>
+          <fields>
+            <field>
+              <name>sync_offset0</name>
+              <description>Sync offset</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <access>read-write</access>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>channel_sync_offset1</name>
+          <description>Channel 1 Sync offset</description>
+          <addressOffset>0xa</addressOffset>
+          <size>8</size>
+          <resetValue>0x0</resetValue>
+          <fields>
+            <field>
+              <name>sync_offset1</name>
+              <description>Sync offset</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <access>read-write</access>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>channel_sync_offset2</name>
+          <description>Channel 2 Sync offset</description>
+          <addressOffset>0xb</addressOffset>
+          <size>8</size>
+          <resetValue>0x0</resetValue>
+          <fields>
+            <field>
+              <name>sync_offset2</name>
+              <description>Sync offset</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <access>read-write</access>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>channel_sync_offset3</name>
+          <description>Channel 3 Sync offset</description>
+          <addressOffset>0xc</addressOffset>
+          <size>8</size>
+          <resetValue>0x0</resetValue>
+          <fields>
+            <field>
+              <name>sync_offset3</name>
+              <description>Sync offset</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <access>read-write</access>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>channel_sync_offset4</name>
+          <description>Channel 4 Sync offset</description>
+          <addressOffset>0xd</addressOffset>
+          <size>8</size>
+          <resetValue>0x0</resetValue>
+          <fields>
+            <field>
+              <name>sync_offset4</name>
+              <description>Sync offset</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <access>read-write</access>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>channel_sync_offset5</name>
+          <description>Channel 5 Sync offset</description>
+          <addressOffset>0xe</addressOffset>
+          <size>8</size>
+          <resetValue>0x0</resetValue>
+          <fields>
+            <field>
+              <name>sync_offset5</name>
+              <description>Sync offset</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <access>read-write</access>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>channel_sync_offset6</name>
+          <description>Channel 6 Sync offset</description>
+          <addressOffset>0xf</addressOffset>
+          <size>8</size>
+          <resetValue>0x0</resetValue>
+          <fields>
+            <field>
+              <name>sync_offset6</name>
+              <description>Sync offset</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <access>read-write</access>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>channel_sync_offset7</name>
+          <description>Channel 7 Sync offset</description>
+          <addressOffset>0x10</addressOffset>
+          <size>8</size>
+          <resetValue>0x0</resetValue>
+          <fields>
+            <field>
+              <name>sync_offset7</name>
+              <description>Sync offset</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <access>read-write</access>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>user_cfg1</name>
+          <description>General user configuration 1 (power-down/reset)</description>
+          <addressOffset>0x11</addressOffset>
+          <size>8</size>
+          <resetValue>0x24</resetValue>
+          <fields>
+            <field>
+              <name>soft_reset</name>
+              <description>Soft reset</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>2</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NONE</name>
+                  <description>No effect</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>SECOND</name>
+                  <description>2nd write</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>FIRST</name>
+                  <description>1st write</description>
+                  <value>3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>pdb_rc_osc</name>
+              <description>Power down internal oscillator (active low)</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>pdb_sar</name>
+              <description>Power down SAR (active low)</description>
+              <bitOffset>3</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>pdb_refout</name>
+              <description>Power down Reference output buffer (active low)</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>pdb_vcm</name>
+              <description>Power down VCM buffer (active low)</description>
+              <bitOffset>5</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>power_mode</name>
+              <description>Power down VCM buffer (active low)</description>
+              <bitOffset>6</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>LOW_PWR</name>
+                  <description>Low power (1/4)</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>HIGH_RES</name>
+                  <description>High resolution</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>all_ch_dis_mclk</name>
+              <description>Keep DCLK even when all channel are disabled</description>
+              <bitOffset>7</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>user_cfg2</name>
+          <description>General user configuration 2 (drive/filter)</description>
+          <addressOffset>0x12</addressOffset>
+          <size>8</size>
+          <resetValue>0x8</resetValue>
+          <fields>
+            <field>
+              <name>spi_sync</name>
+              <description>SYNC pulse generated through SPI\nWhen low, this signal is AND’ed with the value on the START pin in the control module and generates a pulse in the SYNC_IN pin.\nWhen high, this bit is AND’ed with the value on START pin in the control module</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>dout_drive_str</name>
+              <description>Configure drive strength for DOUT</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>2</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NOMINAL</name>
+                  <description>Nominal</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>STRONG</name>
+                  <description>Strong</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>WEAK</name>
+                  <description>Weak</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>EXTRA_STRONG</name>
+                  <description>Extra Strong</description>
+                  <value>3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>sdo_drive_str</name>
+              <description>Configure drive strength for SDO</description>
+              <bitOffset>3</bitOffset>
+              <bitWidth>2</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NOMINAL</name>
+                  <description>Nominal</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>STRONG</name>
+                  <description>Strong</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>WEAK</name>
+                  <description>Weak</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>EXTRA_STRONG</name>
+                  <description>Extra Strong</description>
+                  <value>3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>sar_diag_en</name>
+              <description>Sets SPI interface to read back SAR result on SDO</description>
+              <bitOffset>5</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>filter_mode</name>
+              <description>Power down VCM buffer (active low)</description>
+              <bitOffset>6</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>SINC3</name>
+                  <description>3-tap Sinc</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>SINC5</name>
+                  <description>5-tap Sinc</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>user_cfg3</name>
+          <description>General user configuration 3</description>
+          <addressOffset>0x13</addressOffset>
+          <size>8</size>
+          <resetValue>0x80</resetValue>
+          <fields>
+            <field>
+              <name>clk_qual_dis</name>
+              <description>Disable clock qualifier check if user reqyire to use an MCLK &lt; 256 kHz</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>spi_subordinate</name>
+              <description>Enable SPI subordinate to read-back ADC on SDO</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>convst_deglitch_dis</name>
+              <description>Disable deglitching of CONVST_SAR pin</description>
+              <bitOffset>6</bitOffset>
+              <bitWidth>2</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DEGLITCH_1P5</name>
+                  <description>Deglitch 1.5 MCLK</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>No deglitch circuit</description>
+                  <value>3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>data_output</name>
+          <description>Data output format</description>
+          <addressOffset>0x14</addressOffset>
+          <size>8</size>
+          <resetValue>0x0</resetValue>
+          <fields>
+            <field>
+              <name>dclk_div</name>
+              <description>MCLK divider (power of 2)</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>3</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>header_format</name>
+              <description>Header format</description>
+              <bitOffset>5</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>STATUS</name>
+                  <description>Status header</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>CRC</name>
+                  <description>CRC header</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>data_format</name>
+              <description>Data out format</description>
+              <bitOffset>6</bitOffset>
+              <bitWidth>2</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>QUAD</name>
+                  <description>4 DOUT lines</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DOUBLE</name>
+                  <description>2 DOUT lines</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>SINGLE</name>
+                  <description>1 DOUT lines</description>
+                  <value>2</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>mux_ctrl_ref_mtr</name>
+          <description>ADC/Reference muc control</description>
+          <addressOffset>0x15</addressOffset>
+          <size>8</size>
+          <resetValue>0x0</resetValue>
+          <fields>
+            <field>
+              <name>mtr</name>
+              <description>SD ADC Meter mux</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>4</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>FIXED_280</name>
+                  <description>280mV</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>EXT_PM</name>
+                  <description>External reference REFx+/REFx−</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>EXT_MP</name>
+                  <description>External reference REFx-/REFx+</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>EXT_MM</name>
+                  <description>External reference REFx-/REFx-</description>
+                  <value>3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>INT_PM</name>
+                  <description>Internal reference +/-</description>
+                  <value>4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>INT_MP</name>
+                  <description>Internal reference -/+</description>
+                  <value>5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>INT_MM</name>
+                  <description>Internal reference -/-</description>
+                  <value>6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>EXT_PP</name>
+                  <description>External reference REFx+/REFx+</description>
+                  <value>7</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>ref</name>
+              <description>SD ADC reference mux</description>
+              <bitOffset>6</bitOffset>
+              <bitWidth>2</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>EXT_PM</name>
+                  <description>External reference REFx+/REFx−</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>INTERNAL</name>
+                  <description>Internal reference</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>EXT_SUP</name>
+                  <description>External supply AVDD1x/AVSSx</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>EXT_MP</name>
+                  <description>External reference REFx-/REFx+</description>
+                  <value>3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>mux_ctrl_global</name>
+          <description>ADC/Reference muc control</description>
+          <addressOffset>0x16</addressOffset>
+          <size>8</size>
+          <resetValue>0x0</resetValue>
+          <fields>
+            <field>
+              <name>global</name>
+              <description>SD ADC reference mux</description>
+              <bitOffset>3</bitOffset>
+              <bitWidth>5</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>AUXAIN</name>
+                  <description>AUXAIN+/AUXAIN−.</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DVBE</name>
+                  <description>DVBE/AVSSx.</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>REF1_PM</name>
+                  <description>REF1+/REF1−.</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>REF2_PM</name>
+                  <description>REF2+/REF2−.</description>
+                  <value>3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>REF_OUT</name>
+                  <description>REF_OUT/AVSSx.</description>
+                  <value>4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>VCM</name>
+                  <description>VCM/AVSSx.</description>
+                  <value>5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>AREG1CAP</name>
+                  <description>AREG1CAP/AVSSx.</description>
+                  <value>6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>AREG2CAP</name>
+                  <description>AREG2CAP/AVSSx.</description>
+                  <value>7</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DREGCAP</name>
+                  <description>DREGCAP/DGND.</description>
+                  <value>8</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>AVDD1A</name>
+                  <description>AVDD1A/AVSSx.</description>
+                  <value>9</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>AVDD1B</name>
+                  <description>AVDD1B/AVSSx.</description>
+                  <value>10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>AVDD2A</name>
+                  <description>AVDD2A/AVSSx.</description>
+                  <value>11</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>AVDD2B</name>
+                  <description>AVDD2B/AVSSx.</description>
+                  <value>12</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>IOVDD</name>
+                  <description>IOVDD/DGND.</description>
+                  <value>13</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>AVDD4</name>
+                  <description>AVDD4/AVSSx.</description>
+                  <value>14</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DGND_A</name>
+                  <description>DGND/AVSS1A.</description>
+                  <value>15</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DGND_B</name>
+                  <description>DGND/AVSS1B.</description>
+                  <value>16</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DGND_X</name>
+                  <description>DGND/AVSSx.</description>
+                  <value>17</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>AVDD4_X</name>
+                  <description>AVDD4/AVSSx.</description>
+                  <value>18</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>REF1_PX</name>
+                  <description>REF1+/AVSSx.</description>
+                  <value>19</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>REF2_PX</name>
+                  <description>REF2+/AVSSx.</description>
+                  <value>20</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>AVDD4_ATT</name>
+                  <description>AVDD4/AVSSx. Attenuated.</description>
+                  <value>21</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>gpio_cfg</name>
+          <description>GPIO configuration register</description>
+          <addressOffset>0x17</addressOffset>
+          <size>8</size>
+          <resetValue>0x0</resetValue>
+          <fields>
+            <field>
+              <name>op_en</name>
+              <description>Input/Output</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>3</bitWidth>
+              <access>read-write</access>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>gpio_data</name>
+          <description>GPIO configuration register</description>
+          <addressOffset>0x18</addressOffset>
+          <size>8</size>
+          <resetValue>0x0</resetValue>
+          <fields>
+            <field>
+              <name>write</name>
+              <description>Value sent to the GPIO pins</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>3</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>read</name>
+              <description>Data read from the GPIO pins</description>
+              <bitOffset>3</bitOffset>
+              <bitWidth>3</bitWidth>
+              <access>read-only</access>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>buffer_cfg1</name>
+          <description>Buffer configuration 1</description>
+          <addressOffset>0x19</addressOffset>
+          <size>8</size>
+          <resetValue>0x18</resetValue>
+          <fields>
+            <field>
+              <name>ref_buf_neg_en</name>
+              <description>Reference buffer negative enable</description>
+              <bitOffset>3</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>ref_buf_pos_en</name>
+              <description>Reference buffer positive enable</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>buffer_cfg2</name>
+          <description>Buffer configuration (reference)</description>
+          <addressOffset>0x1a</addressOffset>
+          <size>8</size>
+          <resetValue>0xc7</resetValue>
+          <fields>
+            <field>
+              <name>pdb_dldo_ovrdrv</name>
+              <description>DREGCAP Overdrive Enable</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>pdb_aldo2_ovrdrv</name>
+              <description>AREG2CAP Overdrive Enable</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>pdb_aldo1_ovrdrv</name>
+              <description>AREG1CAP Overdrive Enable</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>ref_buf_neg_preq</name>
+              <description>Reference Buffer Negative Precharge Enable</description>
+              <bitOffset>6</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>ref_buf_pos_preq</name>
+              <description>Reference Buffer Positive Precharge Enable</description>
+              <bitOffset>7</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>channel_offset_up0</name>
+          <description>Channel 0 offset (upper byte)</description>
+          <addressOffset>0x1b</addressOffset>
+          <size>8</size>
+          <resetValue>0x0</resetValue>
+          <fields>
+            <field>
+              <name>offset0</name>
+              <description>Offset (bit 23:16)</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <access>read-write</access>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>channel_offset_up1</name>
+          <description>Channel 1 offset (upper byte)</description>
+          <addressOffset>0x1c</addressOffset>
+          <size>8</size>
+          <resetValue>0x0</resetValue>
+          <fields>
+            <field>
+              <name>offset1</name>
+              <description>Offset (bit 23:16)</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <access>read-write</access>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>channel_offset_up2</name>
+          <description>Channel 2 offset (upper byte)</description>
+          <addressOffset>0x1d</addressOffset>
+          <size>8</size>
+          <resetValue>0x0</resetValue>
+          <fields>
+            <field>
+              <name>offset2</name>
+              <description>Offset (bit 23:16)</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <access>read-write</access>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>channel_offset_up3</name>
+          <description>Channel 3 offset (upper byte)</description>
+          <addressOffset>0x1e</addressOffset>
+          <size>8</size>
+          <resetValue>0x0</resetValue>
+          <fields>
+            <field>
+              <name>offset3</name>
+              <description>Offset (bit 23:16)</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <access>read-write</access>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>channel_offset_up4</name>
+          <description>Channel 4 offset (upper byte)</description>
+          <addressOffset>0x1f</addressOffset>
+          <size>8</size>
+          <resetValue>0x0</resetValue>
+          <fields>
+            <field>
+              <name>offset4</name>
+              <description>Offset (bit 23:16)</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <access>read-write</access>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>channel_offset_up5</name>
+          <description>Channel 5 offset (upper byte)</description>
+          <addressOffset>0x20</addressOffset>
+          <size>8</size>
+          <resetValue>0x0</resetValue>
+          <fields>
+            <field>
+              <name>offset5</name>
+              <description>Offset (bit 23:16)</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <access>read-write</access>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>channel_offset_up6</name>
+          <description>Channel 6 offset (upper byte)</description>
+          <addressOffset>0x21</addressOffset>
+          <size>8</size>
+          <resetValue>0x0</resetValue>
+          <fields>
+            <field>
+              <name>offset6</name>
+              <description>Offset (bit 23:16)</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <access>read-write</access>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>channel_offset_up7</name>
+          <description>Channel 7 offset (upper byte)</description>
+          <addressOffset>0x22</addressOffset>
+          <size>8</size>
+          <resetValue>0x0</resetValue>
+          <fields>
+            <field>
+              <name>offset7</name>
+              <description>Offset (bit 23:16)</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <access>read-write</access>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>channel_offset_mid0</name>
+          <description>Channel 0 offset (middle byte)</description>
+          <addressOffset>0x23</addressOffset>
+          <size>8</size>
+          <resetValue>0x0</resetValue>
+          <fields>
+            <field>
+              <name>offset0</name>
+              <description>Offset (bit 15:8)</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <access>read-write</access>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>channel_offset_mid1</name>
+          <description>Channel 1 offset (middle byte)</description>
+          <addressOffset>0x24</addressOffset>
+          <size>8</size>
+          <resetValue>0x0</resetValue>
+          <fields>
+            <field>
+              <name>offset1</name>
+              <description>Offset (bit 15:8)</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <access>read-write</access>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>channel_offset_mid2</name>
+          <description>Channel 2 offset (middle byte)</description>
+          <addressOffset>0x25</addressOffset>
+          <size>8</size>
+          <resetValue>0x0</resetValue>
+          <fields>
+            <field>
+              <name>offset2</name>
+              <description>Offset (bit 15:8)</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <access>read-write</access>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>channel_offset_mid3</name>
+          <description>Channel 3 offset (middle byte)</description>
+          <addressOffset>0x26</addressOffset>
+          <size>8</size>
+          <resetValue>0x0</resetValue>
+          <fields>
+            <field>
+              <name>offset3</name>
+              <description>Offset (bit 15:8)</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <access>read-write</access>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>channel_offset_mid4</name>
+          <description>Channel 4 offset (middle byte)</description>
+          <addressOffset>0x27</addressOffset>
+          <size>8</size>
+          <resetValue>0x0</resetValue>
+          <fields>
+            <field>
+              <name>offset4</name>
+              <description>Offset (bit 15:8)</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <access>read-write</access>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>channel_offset_mid5</name>
+          <description>Channel 5 offset (middle byte)</description>
+          <addressOffset>0x28</addressOffset>
+          <size>8</size>
+          <resetValue>0x0</resetValue>
+          <fields>
+            <field>
+              <name>offset5</name>
+              <description>Offset (bit 15:8)</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <access>read-write</access>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>channel_offset_mid6</name>
+          <description>Channel 6 offset (middle byte)</description>
+          <addressOffset>0x29</addressOffset>
+          <size>8</size>
+          <resetValue>0x0</resetValue>
+          <fields>
+            <field>
+              <name>offset6</name>
+              <description>Offset (bit 15:8)</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <access>read-write</access>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>channel_offset_mid7</name>
+          <description>Channel 7 offset (middle byte)</description>
+          <addressOffset>0x2a</addressOffset>
+          <size>8</size>
+          <resetValue>0x0</resetValue>
+          <fields>
+            <field>
+              <name>offset7</name>
+              <description>Offset (bit 15:8)</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <access>read-write</access>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>channel_offset_low0</name>
+          <description>Channel 0 offset (lower byte)</description>
+          <addressOffset>0x2b</addressOffset>
+          <size>8</size>
+          <resetValue>0x0</resetValue>
+          <fields>
+            <field>
+              <name>offset0</name>
+              <description>Offset (bit 7:0)</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <access>read-write</access>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>channel_offset_low1</name>
+          <description>Channel 1 offset (lower byte)</description>
+          <addressOffset>0x2c</addressOffset>
+          <size>8</size>
+          <resetValue>0x0</resetValue>
+          <fields>
+            <field>
+              <name>offset1</name>
+              <description>Offset (bit 7:0)</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <access>read-write</access>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>channel_offset_low2</name>
+          <description>Channel 2 offset (lower byte)</description>
+          <addressOffset>0x2d</addressOffset>
+          <size>8</size>
+          <resetValue>0x0</resetValue>
+          <fields>
+            <field>
+              <name>offset2</name>
+              <description>Offset (bit 7:0)</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <access>read-write</access>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>channel_offset_low3</name>
+          <description>Channel 3 offset (lower byte)</description>
+          <addressOffset>0x2e</addressOffset>
+          <size>8</size>
+          <resetValue>0x0</resetValue>
+          <fields>
+            <field>
+              <name>offset3</name>
+              <description>Offset (bit 7:0)</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <access>read-write</access>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>channel_offset_low4</name>
+          <description>Channel 4 offset (lower byte)</description>
+          <addressOffset>0x2f</addressOffset>
+          <size>8</size>
+          <resetValue>0x0</resetValue>
+          <fields>
+            <field>
+              <name>offset4</name>
+              <description>Offset (bit 7:0)</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <access>read-write</access>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>channel_offset_low5</name>
+          <description>Channel 5 offset (lower byte)</description>
+          <addressOffset>0x30</addressOffset>
+          <size>8</size>
+          <resetValue>0x0</resetValue>
+          <fields>
+            <field>
+              <name>offset5</name>
+              <description>Offset (bit 7:0)</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <access>read-write</access>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>channel_offset_low6</name>
+          <description>Channel 6 offset (lower byte)</description>
+          <addressOffset>0x31</addressOffset>
+          <size>8</size>
+          <resetValue>0x0</resetValue>
+          <fields>
+            <field>
+              <name>offset6</name>
+              <description>Offset (bit 7:0)</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <access>read-write</access>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>channel_offset_low7</name>
+          <description>Channel 7 offset (lower byte)</description>
+          <addressOffset>0x32</addressOffset>
+          <size>8</size>
+          <resetValue>0x0</resetValue>
+          <fields>
+            <field>
+              <name>offset7</name>
+              <description>Offset (bit 7:0)</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <access>read-write</access>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>channel_gain_up0</name>
+          <description>Channel 0 gain (upper byte)</description>
+          <addressOffset>0x33</addressOffset>
+          <size>8</size>
+          <resetValue>0x0</resetValue>
+          <fields>
+            <field>
+              <name>gain0</name>
+              <description>Gain (bit 23:16)</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <access>read-write</access>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>channel_gain_up1</name>
+          <description>Channel 1 gain (upper byte)</description>
+          <addressOffset>0x34</addressOffset>
+          <size>8</size>
+          <resetValue>0x0</resetValue>
+          <fields>
+            <field>
+              <name>gain1</name>
+              <description>Gain (bit 23:16)</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <access>read-write</access>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>channel_gain_up2</name>
+          <description>Channel 2 gain (upper byte)</description>
+          <addressOffset>0x35</addressOffset>
+          <size>8</size>
+          <resetValue>0x0</resetValue>
+          <fields>
+            <field>
+              <name>gain2</name>
+              <description>Gain (bit 23:16)</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <access>read-write</access>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>channel_gain_up3</name>
+          <description>Channel 3 gain (upper byte)</description>
+          <addressOffset>0x36</addressOffset>
+          <size>8</size>
+          <resetValue>0x0</resetValue>
+          <fields>
+            <field>
+              <name>gain3</name>
+              <description>Gain (bit 23:16)</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <access>read-write</access>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>channel_gain_up4</name>
+          <description>Channel 4 gain (upper byte)</description>
+          <addressOffset>0x37</addressOffset>
+          <size>8</size>
+          <resetValue>0x0</resetValue>
+          <fields>
+            <field>
+              <name>gain4</name>
+              <description>Gain (bit 23:16)</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <access>read-write</access>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>channel_gain_up5</name>
+          <description>Channel 5 gain (upper byte)</description>
+          <addressOffset>0x38</addressOffset>
+          <size>8</size>
+          <resetValue>0x0</resetValue>
+          <fields>
+            <field>
+              <name>gain5</name>
+              <description>Gain (bit 23:16)</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <access>read-write</access>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>channel_gain_up6</name>
+          <description>Channel 6 gain (upper byte)</description>
+          <addressOffset>0x39</addressOffset>
+          <size>8</size>
+          <resetValue>0x0</resetValue>
+          <fields>
+            <field>
+              <name>gain6</name>
+              <description>Gain (bit 23:16)</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <access>read-write</access>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>channel_gain_up7</name>
+          <description>Channel 7 gain (upper byte)</description>
+          <addressOffset>0x3a</addressOffset>
+          <size>8</size>
+          <resetValue>0x0</resetValue>
+          <fields>
+            <field>
+              <name>gain7</name>
+              <description>Gain (bit 23:16)</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <access>read-write</access>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>channel_gain_mid0</name>
+          <description>Channel 0 gain (middle byte)</description>
+          <addressOffset>0x3b</addressOffset>
+          <size>8</size>
+          <resetValue>0x0</resetValue>
+          <fields>
+            <field>
+              <name>gain0</name>
+              <description>Gain (bit 15:8)</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <access>read-write</access>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>channel_gain_mid1</name>
+          <description>Channel 1 gain (middle byte)</description>
+          <addressOffset>0x3c</addressOffset>
+          <size>8</size>
+          <resetValue>0x0</resetValue>
+          <fields>
+            <field>
+              <name>gain1</name>
+              <description>Gain (bit 15:8)</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <access>read-write</access>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>channel_gain_mid2</name>
+          <description>Channel 2 gain (middle byte)</description>
+          <addressOffset>0x3d</addressOffset>
+          <size>8</size>
+          <resetValue>0x0</resetValue>
+          <fields>
+            <field>
+              <name>gain2</name>
+              <description>Gain (bit 15:8)</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <access>read-write</access>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>channel_gain_mid3</name>
+          <description>Channel 3 gain (middle byte)</description>
+          <addressOffset>0x3e</addressOffset>
+          <size>8</size>
+          <resetValue>0x0</resetValue>
+          <fields>
+            <field>
+              <name>gain3</name>
+              <description>Gain (bit 15:8)</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <access>read-write</access>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>channel_gain_mid4</name>
+          <description>Channel 4 gain (middle byte)</description>
+          <addressOffset>0x3f</addressOffset>
+          <size>8</size>
+          <resetValue>0x0</resetValue>
+          <fields>
+            <field>
+              <name>gain4</name>
+              <description>Gain (bit 15:8)</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <access>read-write</access>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>channel_gain_mid5</name>
+          <description>Channel 5 gain (middle byte)</description>
+          <addressOffset>0x40</addressOffset>
+          <size>8</size>
+          <resetValue>0x0</resetValue>
+          <fields>
+            <field>
+              <name>gain5</name>
+              <description>Gain (bit 15:8)</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <access>read-write</access>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>channel_gain_mid6</name>
+          <description>Channel 6 gain (middle byte)</description>
+          <addressOffset>0x41</addressOffset>
+          <size>8</size>
+          <resetValue>0x0</resetValue>
+          <fields>
+            <field>
+              <name>gain6</name>
+              <description>Gain (bit 15:8)</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <access>read-write</access>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>channel_gain_mid7</name>
+          <description>Channel 7 gain (middle byte)</description>
+          <addressOffset>0x42</addressOffset>
+          <size>8</size>
+          <resetValue>0x0</resetValue>
+          <fields>
+            <field>
+              <name>gain7</name>
+              <description>Gain (bit 15:8)</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <access>read-write</access>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>channel_gain_low0</name>
+          <description>Channel 0 gain (lower byte)</description>
+          <addressOffset>0x43</addressOffset>
+          <size>8</size>
+          <resetValue>0x0</resetValue>
+          <fields>
+            <field>
+              <name>gain0</name>
+              <description>Gain (bit 7:0)</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <access>read-write</access>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>channel_gain_low1</name>
+          <description>Channel 1 gain (lower byte)</description>
+          <addressOffset>0x44</addressOffset>
+          <size>8</size>
+          <resetValue>0x0</resetValue>
+          <fields>
+            <field>
+              <name>gain1</name>
+              <description>Gain (bit 7:0)</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <access>read-write</access>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>channel_gain_low2</name>
+          <description>Channel 2 gain (lower byte)</description>
+          <addressOffset>0x45</addressOffset>
+          <size>8</size>
+          <resetValue>0x0</resetValue>
+          <fields>
+            <field>
+              <name>gain2</name>
+              <description>Gain (bit 7:0)</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <access>read-write</access>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>channel_gain_low3</name>
+          <description>Channel 3 gain (lower byte)</description>
+          <addressOffset>0x46</addressOffset>
+          <size>8</size>
+          <resetValue>0x0</resetValue>
+          <fields>
+            <field>
+              <name>gain3</name>
+              <description>Gain (bit 7:0)</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <access>read-write</access>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>channel_gain_low4</name>
+          <description>Channel 4 gain (lower byte)</description>
+          <addressOffset>0x47</addressOffset>
+          <size>8</size>
+          <resetValue>0x0</resetValue>
+          <fields>
+            <field>
+              <name>gain4</name>
+              <description>Gain (bit 7:0)</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <access>read-write</access>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>channel_gain_low5</name>
+          <description>Channel 5 gain (lower byte)</description>
+          <addressOffset>0x48</addressOffset>
+          <size>8</size>
+          <resetValue>0x0</resetValue>
+          <fields>
+            <field>
+              <name>gain5</name>
+              <description>Gain (bit 7:0)</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <access>read-write</access>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>channel_gain_low6</name>
+          <description>Channel 6 gain (lower byte)</description>
+          <addressOffset>0x49</addressOffset>
+          <size>8</size>
+          <resetValue>0x0</resetValue>
+          <fields>
+            <field>
+              <name>gain6</name>
+              <description>Gain (bit 7:0)</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <access>read-write</access>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>channel_gain_low7</name>
+          <description>Channel 7 gain (lower byte)</description>
+          <addressOffset>0x4a</addressOffset>
+          <size>8</size>
+          <resetValue>0x0</resetValue>
+          <fields>
+            <field>
+              <name>gain7</name>
+              <description>Gain (bit 7:0)</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <access>read-write</access>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>channel_status0</name>
+          <description>Channel 0 status</description>
+          <addressOffset>0x4b</addressOffset>
+          <size>8</size>
+          <resetValue>0x0</resetValue>
+          <fields>
+            <field>
+              <name>err_ref_det0</name>
+              <description>Channel 0 — Reference Detect Error</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>err_ainp_ov0</name>
+              <description>Channel 0 — AIN0+ Overvoltage Error</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>err_ainp_uv0</name>
+              <description>Channel 0 — AIN0+ Undervoltage Error</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>err_ainm_ov0</name>
+              <description>Channel 0 — AIN0− Overvoltage Error</description>
+              <bitOffset>3</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>err_ainm_uv0</name>
+              <description>Channel 0 — AIN0− Undervoltage Error</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>channel_status1</name>
+          <description>Channel 1 status</description>
+          <addressOffset>0x4c</addressOffset>
+          <size>8</size>
+          <resetValue>0x0</resetValue>
+          <fields>
+            <field>
+              <name>err_ref_det1</name>
+              <description>Channel 1 — Reference Detect Error</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>err_ainp_ov1</name>
+              <description>Channel 1 — AIN0+ Overvoltage Error</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>err_ainp_uv1</name>
+              <description>Channel 1 — AIN0+ Undervoltage Error</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>err_ainm_ov1</name>
+              <description>Channel 1 — AIN0− Overvoltage Error</description>
+              <bitOffset>3</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>err_ainm_uv1</name>
+              <description>Channel 1 — AIN0− Undervoltage Error</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>channel_status2</name>
+          <description>Channel 2 status</description>
+          <addressOffset>0x4d</addressOffset>
+          <size>8</size>
+          <resetValue>0x0</resetValue>
+          <fields>
+            <field>
+              <name>err_ref_det2</name>
+              <description>Channel 2 — Reference Detect Error</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>err_ainp_ov2</name>
+              <description>Channel 2 — AIN0+ Overvoltage Error</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>err_ainp_uv2</name>
+              <description>Channel 2 — AIN0+ Undervoltage Error</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>err_ainm_ov2</name>
+              <description>Channel 2 — AIN0− Overvoltage Error</description>
+              <bitOffset>3</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>err_ainm_uv2</name>
+              <description>Channel 2 — AIN0− Undervoltage Error</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>channel_status3</name>
+          <description>Channel 3 status</description>
+          <addressOffset>0x4e</addressOffset>
+          <size>8</size>
+          <resetValue>0x0</resetValue>
+          <fields>
+            <field>
+              <name>err_ref_det3</name>
+              <description>Channel 3 — Reference Detect Error</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>err_ainp_ov3</name>
+              <description>Channel 3 — AIN0+ Overvoltage Error</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>err_ainp_uv3</name>
+              <description>Channel 3 — AIN0+ Undervoltage Error</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>err_ainm_ov3</name>
+              <description>Channel 3 — AIN0− Overvoltage Error</description>
+              <bitOffset>3</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>err_ainm_uv3</name>
+              <description>Channel 3 — AIN0− Undervoltage Error</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>channel_status4</name>
+          <description>Channel 4 status</description>
+          <addressOffset>0x4f</addressOffset>
+          <size>8</size>
+          <resetValue>0x0</resetValue>
+          <fields>
+            <field>
+              <name>err_ref_det4</name>
+              <description>Channel 4 — Reference Detect Error</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>err_ainp_ov4</name>
+              <description>Channel 4 — AIN0+ Overvoltage Error</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>err_ainp_uv4</name>
+              <description>Channel 4 — AIN0+ Undervoltage Error</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>err_ainm_ov4</name>
+              <description>Channel 4 — AIN0− Overvoltage Error</description>
+              <bitOffset>3</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>err_ainm_uv4</name>
+              <description>Channel 4 — AIN0− Undervoltage Error</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>channel_status5</name>
+          <description>Channel 5 status</description>
+          <addressOffset>0x50</addressOffset>
+          <size>8</size>
+          <resetValue>0x0</resetValue>
+          <fields>
+            <field>
+              <name>err_ref_det5</name>
+              <description>Channel 5 — Reference Detect Error</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>err_ainp_ov5</name>
+              <description>Channel 5 — AIN0+ Overvoltage Error</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>err_ainp_uv5</name>
+              <description>Channel 5 — AIN0+ Undervoltage Error</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>err_ainm_ov5</name>
+              <description>Channel 5 — AIN0− Overvoltage Error</description>
+              <bitOffset>3</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>err_ainm_uv5</name>
+              <description>Channel 5 — AIN0− Undervoltage Error</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>channel_status6</name>
+          <description>Channel 6 status</description>
+          <addressOffset>0x51</addressOffset>
+          <size>8</size>
+          <resetValue>0x0</resetValue>
+          <fields>
+            <field>
+              <name>err_ref_det6</name>
+              <description>Channel 6 — Reference Detect Error</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>err_ainp_ov6</name>
+              <description>Channel 6 — AIN0+ Overvoltage Error</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>err_ainp_uv6</name>
+              <description>Channel 6 — AIN0+ Undervoltage Error</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>err_ainm_ov6</name>
+              <description>Channel 6 — AIN0− Overvoltage Error</description>
+              <bitOffset>3</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>err_ainm_uv6</name>
+              <description>Channel 6 — AIN0− Undervoltage Error</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>channel_status7</name>
+          <description>Channel 7 status</description>
+          <addressOffset>0x52</addressOffset>
+          <size>8</size>
+          <resetValue>0x0</resetValue>
+          <fields>
+            <field>
+              <name>err_ref_det7</name>
+              <description>Channel 7 — Reference Detect Error</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>err_ainp_ov7</name>
+              <description>Channel 7 — AIN0+ Overvoltage Error</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>err_ainp_uv7</name>
+              <description>Channel 7 — AIN0+ Undervoltage Error</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>err_ainm_ov7</name>
+              <description>Channel 7 — AIN0− Overvoltage Error</description>
+              <bitOffset>3</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>err_ainm_uv7</name>
+              <description>Channel 7 — AIN0− Undervoltage Error</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>channel_dsp_err0</name>
+          <description>Channel 0/1 DSP errors</description>
+          <addressOffset>0x53</addressOffset>
+          <size>8</size>
+          <resetValue>0x0</resetValue>
+          <fields>
+            <field>
+              <name>err_output_sat0</name>
+              <description>Channel 0 — ADC conversion has exceeded limits and has been clamped</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>err_filter_sat0</name>
+              <description>Channel 0 — Filter result has exceeded a reasonable level, before offset and gain calibration has been applied</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>err_mod_sat0</name>
+              <description>Channel 0 — Modulator Output Saturation Error</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>err_output_sat1</name>
+              <description>Channel 1 — ADC conversion has exceeded limits and has been clamped</description>
+              <bitOffset>3</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>err_filter_sat1</name>
+              <description>Channel 1 — Filter result has exceeded a reasonable level, before offset and gain calibration has been applied</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>err_mod_sat1</name>
+              <description>Channel 1 — Modulator Output Saturation Error</description>
+              <bitOffset>5</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>channel_dsp_err1</name>
+          <description>Channel 2/3 DSP errors</description>
+          <addressOffset>0x54</addressOffset>
+          <size>8</size>
+          <resetValue>0x0</resetValue>
+          <fields>
+            <field>
+              <name>err_output_sat2</name>
+              <description>Channel 2 — ADC conversion has exceeded limits and has been clamped</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>err_filter_sat2</name>
+              <description>Channel 2 — Filter result has exceeded a reasonable level, before offset and gain calibration has been applied</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>err_mod_sat2</name>
+              <description>Channel 2 — Modulator Output Saturation Error</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>err_output_sat3</name>
+              <description>Channel 3 — ADC conversion has exceeded limits and has been clamped</description>
+              <bitOffset>3</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>err_filter_sat3</name>
+              <description>Channel 3 — Filter result has exceeded a reasonable level, before offset and gain calibration has been applied</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>err_mod_sat3</name>
+              <description>Channel 3 — Modulator Output Saturation Error</description>
+              <bitOffset>5</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>channel_dsp_err2</name>
+          <description>Channel 4/5 DSP errors</description>
+          <addressOffset>0x55</addressOffset>
+          <size>8</size>
+          <resetValue>0x0</resetValue>
+          <fields>
+            <field>
+              <name>err_output_sat4</name>
+              <description>Channel 4 — ADC conversion has exceeded limits and has been clamped</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>err_filter_sat4</name>
+              <description>Channel 4 — Filter result has exceeded a reasonable level, before offset and gain calibration has been applied</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>err_mod_sat4</name>
+              <description>Channel 4 — Modulator Output Saturation Error</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>err_output_sat5</name>
+              <description>Channel 5 — ADC conversion has exceeded limits and has been clamped</description>
+              <bitOffset>3</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>err_filter_sat5</name>
+              <description>Channel 5 — Filter result has exceeded a reasonable level, before offset and gain calibration has been applied</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>err_mod_sat5</name>
+              <description>Channel 5 — Modulator Output Saturation Error</description>
+              <bitOffset>5</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>channel_dsp_err3</name>
+          <description>Channel 6/7 DSP errors</description>
+          <addressOffset>0x56</addressOffset>
+          <size>8</size>
+          <resetValue>0x0</resetValue>
+          <fields>
+            <field>
+              <name>err_output_sat6</name>
+              <description>Channel 6 — ADC conversion has exceeded limits and has been clamped</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>err_filter_sat6</name>
+              <description>Channel 6 — Filter result has exceeded a reasonable level, before offset and gain calibration has been applied</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>err_mod_sat6</name>
+              <description>Channel 6 — Modulator Output Saturation Error</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>err_output_sat7</name>
+              <description>Channel 7 — ADC conversion has exceeded limits and has been clamped</description>
+              <bitOffset>3</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>err_filter_sat7</name>
+              <description>Channel 7 — Filter result has exceeded a reasonable level, before offset and gain calibration has been applied</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>err_mod_sat7</name>
+              <description>Channel 7 — Modulator Output Saturation Error</description>
+              <bitOffset>5</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>channel_test_en</name>
+          <description>Channel 0 to 7 test enable</description>
+          <addressOffset>0x57</addressOffset>
+          <size>8</size>
+          <resetValue>0xfe</resetValue>
+          <fields>
+            <field>
+              <name>ref_det_test_en</name>
+              <description>Reference Detect Test Enable</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>ainp_ov_test_en</name>
+              <description>AINx+ Overvoltage Test Enable</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>ainp_uv_test_en</name>
+              <description>AINx+ Undervoltage Test Enable</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>ainm_ov_test_en</name>
+              <description>AINx− Overvoltage Test Enable</description>
+              <bitOffset>3</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>ainm_uv_test_en</name>
+              <description>AINx− Undervoltage Test Enable</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>mod_sat_test_en</name>
+              <description>Enable Error Flag for Modulator Saturation</description>
+              <bitOffset>5</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>filter_sat_test_en</name>
+              <description>Filter Saturation Test Enable</description>
+              <bitOffset>6</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>output_sat_test_en</name>
+              <description>ADC Conversion Error Test Enable</description>
+              <bitOffset>7</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>general_err1</name>
+          <description>General Error 1</description>
+          <addressOffset>0x58</addressOffset>
+          <size>8</size>
+          <resetValue>0x0</resetValue>
+          <fields>
+            <field>
+              <name>spi_crc_err</name>
+              <description>SPI CRC error</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>spi_invalid_write_err</name>
+              <description>SPI invalid write address</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>spi_invalid_read_err</name>
+              <description>SPI invalid read address</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>spi_clk_count_err</name>
+              <description>SPI clock counter error</description>
+              <bitOffset>3</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>rom_crc_err</name>
+              <description>A CRC of the fuse contents is run periodically to check for errors in the fuses</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>memmap_crc_err</name>
+              <description>A CRC of the memory map contents is run periodically to check for errors</description>
+              <bitOffset>5</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>general_err1_en</name>
+          <description>General Error 1 Enable</description>
+          <addressOffset>0x59</addressOffset>
+          <size>8</size>
+          <resetValue>0x3e</resetValue>
+          <fields>
+            <field>
+              <name>spi_crc_err_en</name>
+              <description>Enable SPI CRC error</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>spi_invalid_write_err_en</name>
+              <description>Enable SPI invalid write address</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>spi_invalid_read_err_en</name>
+              <description>Enable SPI invalid read address</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>spi_clk_count_err_en</name>
+              <description>Enable SPI clock counter error</description>
+              <bitOffset>3</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>rom_crc_err_en</name>
+              <description>Enable a CRC of the fuse contents is run periodically to check for errors in the fuses</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>memmap_crc_err_en</name>
+              <description>Enable a CRC of the memory map contents is run periodically to check for errors</description>
+              <bitOffset>5</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>general_err2</name>
+          <description>General Error 2</description>
+          <addressOffset>0x5a</addressOffset>
+          <size>8</size>
+          <resetValue>0x0</resetValue>
+          <fields>
+            <field>
+              <name>dldo_psm_err</name>
+              <description>DREGCAP Power Supply Error</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>aldo2_psm_err</name>
+              <description>AREG2CAP Power Supply Error</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>aldo1_psm_err</name>
+              <description>AREG1CAP Power Supply Error</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>ext_mclk_switch_err</name>
+              <description>Clock Not Switched Over</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>reset_detected</name>
+              <description>Reset Detected</description>
+              <bitOffset>5</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>general_err2_en</name>
+          <description>General Error 2</description>
+          <addressOffset>0x5b</addressOffset>
+          <size>8</size>
+          <resetValue>0x2c</resetValue>
+          <fields>
+            <field>
+              <name>ldo_psm_trip_test</name>
+              <description>Run PSM Trip\n00 — no trip detect test enabled\n01 — run trip detect test on AREG1CAP\n10 — run trip detect test on AREG2CAP\n11 — run trip detect test on DREGCAP</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>2</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>dldo_psm_err_en</name>
+              <description>Enable digital Power Supply Error</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>aldo_psm_err_en</name>
+              <description>Enable analog Power Supply Error</description>
+              <bitOffset>3</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>reset_detected_en</name>
+              <description>Enable Reset Detected</description>
+              <bitOffset>5</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>error_status1</name>
+          <description>Error Status 1</description>
+          <addressOffset>0x5c</addressOffset>
+          <size>8</size>
+          <resetValue>0x0</resetValue>
+          <fields>
+            <field>
+              <name>err_loc_ch0</name>
+              <description>Error specific to channel 0</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>err_loc_ch1</name>
+              <description>Error specific to channel 1</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>err_loc_ch2</name>
+              <description>Error specific to channel 2</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>err_loc_ch3</name>
+              <description>Error specific to channel 3</description>
+              <bitOffset>3</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>err_loc_ch4</name>
+              <description>Error specific to channel 4</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>chip_error1</name>
+              <description>High when any error bit is high</description>
+              <bitOffset>5</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>error_status2</name>
+          <description>Error Status 2</description>
+          <addressOffset>0x5d</addressOffset>
+          <size>8</size>
+          <resetValue>0x0</resetValue>
+          <fields>
+            <field>
+              <name>err_loc_ch5</name>
+              <description>Error specific to channel 5</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>err_loc_ch6</name>
+              <description>Error specific to channel 6</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>err_loc_ch7</name>
+              <description>Error specific to channel 7</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>err_loc_gen0</name>
+              <description>Error specific to gen_err[1]</description>
+              <bitOffset>3</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>err_loc_gen1</name>
+              <description>Error specific to gen_err[2]</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>chip_error2</name>
+              <description>High when any error bit is high</description>
+              <bitOffset>5</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>error_status3</name>
+          <description>Error Status 3</description>
+          <addressOffset>0x5e</addressOffset>
+          <size>8</size>
+          <resetValue>0x0</resetValue>
+          <fields>
+            <field>
+              <name>err_loc_sat_ch0</name>
+              <description>Sat Error specific to channel 0 / 1</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>err_loc_sat_ch1</name>
+              <description>Sat Error specific to channel 1 / 2</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>err_loc_sat_ch2</name>
+              <description>Sat Error specific to channel 2 / 3</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>err_loc_sat_ch3</name>
+              <description>Sat Error specific to channel 3 / 4</description>
+              <bitOffset>3</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>init_complete</name>
+              <description>Fuse init complete</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>chip_error3</name>
+              <description>High when any error bit is high</description>
+              <bitOffset>5</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>src_n_msb</name>
+          <description>Sample Rate converter N MSB</description>
+          <addressOffset>0x5f</addressOffset>
+          <size>8</size>
+          <resetValue>0x0</resetValue>
+          <fields>
+            <field>
+              <name>src_n</name>
+              <description>Sample Rate converter N[11:8]</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>4</bitWidth>
+              <access>read-write</access>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>src_n_lsb</name>
+          <description>Sample Rate converter N LSB</description>
+          <addressOffset>0x60</addressOffset>
+          <size>8</size>
+          <resetValue>0x0</resetValue>
+          <fields>
+            <field>
+              <name>src_n</name>
+              <description>Sample Rate converter N[7:0]</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <access>read-write</access>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>src_if_msb</name>
+          <description>Sample Rate converter IF MSB</description>
+          <addressOffset>0x61</addressOffset>
+          <size>8</size>
+          <resetValue>0x0</resetValue>
+          <fields>
+            <field>
+              <name>src_if</name>
+              <description>Sample Rate converter IF[15:8]</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <access>read-write</access>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>src_if_lsb</name>
+          <description>Sample Rate converter IF LSB</description>
+          <addressOffset>0x62</addressOffset>
+          <size>8</size>
+          <resetValue>0x0</resetValue>
+          <fields>
+            <field>
+              <name>src_if</name>
+              <description>Sample Rate converter IF[7:0]</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <access>read-write</access>
+            </field>
+        </fields>
+      </register>
+        <register>
+          <name>src_load</name>
+          <description>Sample Rate converter load</description>
+          <addressOffset>0x63</addressOffset>
+          <size>8</size>
+          <resetValue>0x0</resetValue>
+          <fields>
+            <field>
+              <name>load_update</name>
+              <description>Assert to load SRC registers into SRC</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>load_source</name>
+              <description>Select which option to load an SRC update</description>
+              <bitOffset>7</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+        </fields>
+      </register>
+      </registers>
+    </peripheral>
+  </peripherals>
+
+</device>
+

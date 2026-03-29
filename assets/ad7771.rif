@@ -1,0 +1,229 @@
+rif: ad7771_rif
+  interface: apb
+  addrWidth:     7
+  dataWidth:     8
+  swClock  : clk_rif
+  swReset  : rst_rif_n activeLow async
+  // Pages
+  - Main :
+    registers:
+      - channel_cfg[8] : (channel) "Channel $i configuration"
+        - gain[1]    = 0  7:6   "AFE Gain (power of 2)"
+        - ref_mon[1] = 0  5:5   "Channel used as reference monitor"
+        - rx[1]      = 0  4:4   "Channel meter Mux RX mode"
+        - bias[1] = 0 3:0 "Hidden tuning register"
+          hidden
+      - clock_disable : (channel) "Clock disable per channel"
+        - disable_ch[8] = 0  0:0   "Channel $i Disable"
+      - channel_sync_offset[8] : (channel) "Channel $i Sync offset"
+        - sync_offset[1]  = +0  7:0   "Sync offset"
+      - user_cfg1 : (user_cfg) "General user configuration 1 (power-down/reset)"
+        - all_ch_dis_mclk = 0  7:7   "Keep DCLK even when all channel are disabled"
+        - power_mode = 0  6:6   "Power down VCM buffer (active low)"
+          enum: e_power_mode
+            - LOW_PWR   = 0 "Low power (1/4)"
+            - HIGH_RES  = 1 "High resolution"
+        - pdb_vcm    = 1  5:5   "Power down VCM buffer (active low)"
+        - pdb_refout = 0  4:4   "Power down Reference output buffer (active low)"
+        - pdb_sar    = 0  3:3   "Power down SAR (active low)"
+        - pdb_rc_osc = 1  2:2   "Power down internal oscillator (active low)"
+        - soft_reset = 0  1:0   "Soft reset"
+          enum: e_soft_reset
+            - NONE   = 0 "No effect"
+            - SECOND = 2 "2nd write"
+            - FIRST  = 3 "1st write"
+      - user_cfg2 : (user_cfg) "General user configuration 2 (drive/filter)"
+        - filter_mode = 0  6:6   "Power down VCM buffer (active low)"
+          enum: e_filter_mode
+            - SINC3  = 0 "3-tap Sinc"
+            - SINC5  = 1 "5-tap Sinc"
+        - sar_diag_en = 0  5:5   "Sets SPI interface to read back SAR result on SDO"
+        - sdo_drive_str = STRONG  4:3   "Configure drive strength for SDO"
+          enum: e_drive_str
+            - NOMINAL      = 0 "Nominal"
+            - STRONG       = 1 "Strong"
+            - WEAK         = 2 "Weak"
+            - EXTRA_STRONG = 3 "Extra Strong"
+        - dout_drive_str = NOMINAL 2:1   "Configure drive strength for DOUT"
+          enum: e_drive_str
+        - spi_sync = 0  0:0   "SYNC pulse generated through SPI"
+          description:
+            When low, this signal is AND’ed with the value on the START pin in the control module and generates a pulse in the SYNC_IN pin.
+            When high, this bit is AND’ed with the value on START pin in the control module
+      - user_cfg3 : (user_cfg) "General user configuration 3"
+        - convst_deglitch_dis = 2  7:6   "Disable deglitching of CONVST_SAR pin"
+          enum: e_deglitch
+            - DEGLITCH_1P5  = 2 "Deglitch 1.5 MCLK"
+            - DISABLE       = 3 "No deglitch circuit"
+        - spi_subordinate = 0  4:4   "Enable SPI subordinate to read-back ADC on SDO"
+        - clk_qual_dis = 0  0:0   "Disable clock qualifier check if user reqyire to use an MCLK < 256 kHz"
+      - data_output : "Data output format"
+        - data_format = 0 7:6 "Data out format"
+          enum: e_data_format
+            - QUAD   = 0 "4 DOUT lines"
+            - DOUBLE = 1 "2 DOUT lines"
+            - SINGLE = 2 "1 DOUT lines"
+        - header_format = 0 5:5 "Header format"
+          enum: e_header_format
+            - STATUS  = 0 "Status header"
+            - CRC     = 1 "CRC header"
+        - dclk_div  = 0  3:1 "MCLK divider (power of 2)"
+      - mux_ctrl_ref_mtr : (mux_ctrl) "ADC/Reference muc control"
+        - ref = 0 7:6 "SD ADC reference mux"
+          enum: e_ref_mux
+            - EXT_PM   = 0 "External reference REFx+/REFx−"
+            - INTERNAL = 1 "Internal reference"
+            - EXT_SUP  = 2 "External supply AVDD1x/AVSSx"
+            - EXT_MP   = 3 "External reference REFx-/REFx+"
+        - mtr = 0 5:2 "SD ADC Meter mux"
+          enum: e_mtr_mux
+            - FIXED_280 = 0 "280mV"
+            - EXT_PM    = 1 "External reference REFx+/REFx−"
+            - EXT_MP    = 2 "External reference REFx-/REFx+"
+            - EXT_MM    = 3 "External reference REFx-/REFx-"
+            - INT_PM    = 4 "Internal reference +/-"
+            - INT_MP    = 5 "Internal reference -/+"
+            - INT_MM    = 6 "Internal reference -/-"
+            - EXT_PP    = 7 "External reference REFx+/REFx+"
+      - mux_ctrl_global : (mux_ctrl) "ADC/Reference muc control"
+        - global = 0 7:3 "SD ADC reference mux"
+          enum: e_glob_mux
+            - AUXAIN     = 0 "AUXAIN+/AUXAIN−."
+            - DVBE       = 1 "DVBE/AVSSx."
+            - REF1_PM    = 2 "REF1+/REF1−."
+            - REF2_PM    = 3 "REF2+/REF2−."
+            - REF_OUT    = 4 "REF_OUT/AVSSx."
+            - VCM        = 5 "VCM/AVSSx."
+            - AREG1CAP   = 6 "AREG1CAP/AVSSx."
+            - AREG2CAP   = 7 "AREG2CAP/AVSSx."
+            - DREGCAP    = 8 "DREGCAP/DGND."
+            - AVDD1A     = 9 "AVDD1A/AVSSx."
+            - AVDD1B     = 10 "AVDD1B/AVSSx."
+            - AVDD2A     = 11 "AVDD2A/AVSSx."
+            - AVDD2B     = 12 "AVDD2B/AVSSx."
+            - IOVDD      = 13 "IOVDD/DGND."
+            - AVDD4      = 14 "AVDD4/AVSSx."
+            - DGND_A     = 15 "DGND/AVSS1A."
+            - DGND_B     = 16 "DGND/AVSS1B."
+            - DGND_X     = 17 "DGND/AVSSx."
+            - AVDD4_X    = 18 "AVDD4/AVSSx."
+            - REF1_PX    = 19 "REF1+/AVSSx."
+            - REF2_PX    = 20 "REF2+/AVSSx."
+            - AVDD4_ATT  = 21 "AVDD4/AVSSx. Attenuated."
+      - gpio_cfg :  "GPIO configuration register"
+        - op_en = 0 2:0 "Input/Output"
+      - gpio_data :  "GPIO configuration register"
+        - read      5:3 ro "Data read from the GPIO pins"
+        - write = 0 2:0 rw "Value sent to the GPIO pins"
+      - buffer_cfg1 : (buffer_cfg) "Buffer configuration 1"
+        - ref_buf_pos_en = 1 4:4 "Reference buffer positive enable"
+        - ref_buf_neg_en = 1 3:3 "Reference buffer negative enable"
+      - buffer_cfg2 : (buffer_cfg) "Buffer configuration (reference)"
+        - ref_buf_pos_preq = 1 7:7 "Reference Buffer Positive Precharge Enable"
+        - ref_buf_neg_preq = 1 6:6 "Reference Buffer Negative Precharge Enable"
+        - pdb_aldo1_ovrdrv = 1 2:2 "AREG1CAP Overdrive Enable"
+        - pdb_aldo2_ovrdrv = 1 1:1 "AREG2CAP Overdrive Enable"
+        - pdb_dldo_ovrdrv  = 1 0:0 "DREGCAP Overdrive Enable"
+      - channel_offset_up[8] : (channel) "Channel $i offset (upper byte)"
+        - offset[1]  = 0 7:0 "Offset (bit 23:16)"
+          signed
+          partial 16
+      - channel_offset_mid[8] : (channel) "Channel $i offset (middle byte)"
+        - offset[1]  = 0 7:0 "Offset (bit 15:8)"
+          signed
+          partial 8
+      - channel_offset_low[8] : (channel) "Channel $i offset (lower byte)"
+        - offset[1]  = 0 7:0 "Offset (bit 7:0)"
+          signed
+          partial 0
+      - channel_gain_up[8] : (channel) "Channel $i gain (upper byte)"
+        - gain[1]  = 0 7:0 "Gain (bit 23:16)"
+          partial 16
+      - channel_gain_mid[8] : (channel) "Channel $i gain (middle byte)"
+        - gain[1]  = 0 7:0 "Gain (bit 15:8)"
+          partial 8
+      - channel_gain_low[8] : (channel) "Channel $i gain (lower byte)"
+        - gain[1]  = 0 7:0 "Gain (bit 7:0)"
+          partial 0
+      - channel_status[8] : (channel) "Channel $i status"
+        - err_ainm_uv[1] 4:4 "Channel $i — AIN0− Undervoltage Error"
+        - err_ainm_ov[1] 3:3 "Channel $i — AIN0− Overvoltage Error"
+        - err_ainp_uv[1] 2:2 "Channel $i — AIN0+ Undervoltage Error"
+        - err_ainp_ov[1] 1:1 "Channel $i — AIN0+ Overvoltage Error"
+        - err_ref_det[1] 0:0 "Channel $i — Reference Detect Error"
+      - channel_dsp_err[4] : (channel) "Channel $(2*i)/$(2*i+1) DSP errors"
+        - err_mod_sat[2]     2:2 "Channel $i — Modulator Output Saturation Error"
+          arrayPosIncr 3
+        - err_filter_sat[2]  1:1 "Channel $i — Filter result has exceeded a reasonable level, before offset and gain calibration has been applied"
+          arrayPosIncr 3
+        - err_output_sat[2]  0:0 "Channel $i — ADC conversion has exceeded limits and has been clamped"
+          arrayPosIncr 3
+      - channel_test_en : (channel) "Channel 0 to 7 test enable"
+        - output_sat_test_en = 1 7:7 "ADC Conversion Error Test Enable"
+        - filter_sat_test_en = 1 6:6 "Filter Saturation Test Enable"
+        - mod_sat_test_en    = 1 5:5 "Enable Error Flag for Modulator Saturation"
+        - ainm_uv_test_en    = 1 4:4 "AINx− Undervoltage Test Enable"
+        - ainm_ov_test_en    = 1 3:3 "AINx− Overvoltage Test Enable"
+        - ainp_uv_test_en    = 1 2:2 "AINx+ Undervoltage Test Enable"
+        - ainp_ov_test_en    = 1 1:1 "AINx+ Overvoltage Test Enable"
+        - ref_det_test_en    = 0 0:0 "Reference Detect Test Enable"
+      - general_err1 : (general_err) "General Error 1"
+        - memmap_crc_err        5:5 "A CRC of the memory map contents is run periodically to check for errors"
+        - rom_crc_err           4:4 "A CRC of the fuse contents is run periodically to check for errors in the fuses"
+        - spi_clk_count_err     3:3 "SPI clock counter error"
+        - spi_invalid_read_err  2:2 "SPI invalid read address"
+        - spi_invalid_write_err 1:1 "SPI invalid write address"
+        - spi_crc_err           0:0 "SPI CRC error"
+      - general_err1_en : (general_err) "General Error 1 Enable"
+        - memmap_crc_err_en        = 1 5:5 "Enable a CRC of the memory map contents is run periodically to check for errors"
+        - rom_crc_err_en           = 1 4:4 "Enable a CRC of the fuse contents is run periodically to check for errors in the fuses"
+        - spi_clk_count_err_en     = 1 3:3 "Enable SPI clock counter error"
+        - spi_invalid_read_err_en  = 1 2:2 "Enable SPI invalid read address"
+        - spi_invalid_write_err_en = 1 1:1 "Enable SPI invalid write address"
+        - spi_crc_err_en           = 0 0:0 "Enable SPI CRC error"
+      - general_err2 : (general_err) "General Error 2"
+        - reset_detected      5:5 "Reset Detected"
+        - ext_mclk_switch_err 4:4 "Clock Not Switched Over"
+        - aldo1_psm_err       2:2 "AREG1CAP Power Supply Error"
+        - aldo2_psm_err       1:1 "AREG2CAP Power Supply Error"
+        - dldo_psm_err        0:0 "DREGCAP Power Supply Error"
+      - general_err2_en : (general_err) "General Error 2"
+        - reset_detected_en  = 1 5:5 "Enable Reset Detected"
+        - aldo_psm_err_en    = 1 3:3 "Enable analog Power Supply Error"
+        - dldo_psm_err_en    = 1 2:2 "Enable digital Power Supply Error"
+        - ldo_psm_trip_test  = 0 1:0 "Run PSM Trip"
+          pulse
+          description:
+            00 — no trip detect test enabled
+            01 — run trip detect test on AREG1CAP
+            10 — run trip detect test on AREG2CAP
+            11 — run trip detect test on DREGCAP
+      - error_status1 : (error_status) "Error Status 1"
+        - chip_error1     5:5 "High when any error bit is high"
+        - err_loc_ch[5]  0:0 "Error specific to channel $i"
+      - error_status2 : (error_status) "Error Status 2"
+        - chip_error2     5:5 "High when any error bit is high"
+        - err_loc_gen[2] 3:3 "Error specific to gen_err[$(i+1)]"
+        - err_loc_ch[3]  0:0 "Error specific to channel $i"
+          arrayPartial 5
+      - error_status3 : (error_status) "Error Status 3"
+        - chip_error3        5:5 "High when any error bit is high"
+        - init_complete      4:4 "Fuse init complete"
+        - err_loc_sat_ch[4]  0:0 "Sat Error specific to channel $(i) / $(i+1)"
+      - src_n_msb : (decimation) "Sample Rate converter N MSB"
+        - src_n = 0 3:0 "Sample Rate converter N[11:8]"
+          partial 8
+      - src_n_lsb : (decimation) "Sample Rate converter N LSB"
+        - src_n = 0 7:0 "Sample Rate converter N[7:0]"
+          partial 0
+      - src_if_msb : (decimation) "Sample Rate converter IF MSB"
+        - src_if = 0 7:0 "Sample Rate converter IF[15:8]"
+          partial 8
+      - src_if_lsb : (decimation) "Sample Rate converter IF LSB"
+        - src_if = 0 7:0 "Sample Rate converter IF[7:0]"
+          partial 0
+      - src_load : (decimation) "Sample Rate converter load"
+        - load_source = 0 7:7 "Select which option to load an SRC update"
+        - load_update = 0 0:0 "Assert to load SRC registers into SRC"
+          pulse
+    instances: auto

@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html><head><title>Ad7771 RIF Documentation</title>
+<script type="text/javascript">
+	function ShowPopup(evt, popupid) {
+		hp = document.getElementById(popupid);
+		hp.style.top = 10 + evt.clientY + (document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop);
+		hp.style.left = 10 + evt.clientX + (document.documentElement.scrollLeft ? document.documentElement.scrollLeft : document.body.scrollLeft);
+		hp.style.visibility = "Visible";
+	}
+	function HidePopup(popupid) {
+		hp = document.getElementById(popupid);
+		hp.style.visibility = "Hidden"; 
+	}
+</script>
+<style type="text/css">
+a {
+    cursor: pointer !important;
+}
+div.fulldoc {
+    font: 10pt Arial,verdana,sans-serif;
+    margin-left: 56px;
+    width: 750px;
+}
+h2 {
+    font-size: 1.75em;
+}
+table {
+    border-width: 2px;
+    border-spacing: 0px;
+    border-top-style: none;
+    border-bottom-style: solid;
+    border-right-style: none;
+    border-left-style: none;
+    border-color: gray;
+    border-collapse: collapse;
+    width: 100%;
+}
+caption {
+    font: 10pt Arial,verdana,sans-serif;
+    font-weight: bold;
+    text-align: left;
+    caption-side: top;
+    padding-left: 20px;
+}
+th {
+    font: 10pt Arial,verdana,sans-serif;
+    border-width: 1px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-style: none;
+    border-color: gray;
+    background-color: #CCCCCC;
+    text-align: left;
+}
+td {
+    font: 10pt Arial,verdana,sans-serif;
+    border-width: 1px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-right-style: none;
+    border-left-style: none;
+    border-color: gray;
+    vertical-align: text-top ;
+}
+table.map {
+  border-width: 1px;
+  border-spacing: 0px;
+  border-style: solid;
+  border-color: gray;
+  border-collapse: collapse;
+  text-align: center;
+  vertical-align: middle;
+  width: 100%;
+  empty-cells:show;
+}
+td.map {
+    font: 8pt Arial,verdana,sans-serif;
+    border:1px solid gray;
+    border-collapse:collapse;
+    padding-left: 1px;
+    padding-right: 1px;
+    empty-cells:show;
+    text-align:center;
+    vertical-align: middle;
+}
+td.mapv {
+    font: 8pt Arial,verdana,sans-serif;
+    border:1px solid gray;
+    border-collapse:collapse;
+    padding-left: 1px;
+    padding-right: 1px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    empty-cells:show;
+    writing-mode: vertical-rl;
+    text-orientation: sideways;
+    text-align:center;
+    vertical-align: middle;
+    -webkit-transform: rotate(180deg) scaleY(1.1);
+    -moz-transform:  rotate(180deg) scaleY(1.15) translateX(25%);
+}
+td.enum-name {
+    font: 8pt Arial,verdana,sans-serif;
+    width: 5%;
+    border: 0px solid red;
+    white-space: nowrap;
+    margin-bottom: 5px;
+}
+td.enum-desc {
+    font: 8pt Arial,verdana,sans-serif;
+    width: 95%;
+    border: 0px solid red;
+    margin-bottom: 5px;
+}
+td.rsvd{
+    background-color: #EEEEEE;
+}
+table.noborders {
+    border: 0px solid red;
+    margin-bottom: 5px;
+}
+td.noborders {
+    border: 0px solid red;
+}
+table.note {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 0px solid white;
+}
+td.noteHeader {
+    font-weight: bold;
+    color: #990000;
+    border: 0px solid white;
+    border-right: 2px solid #880000;
+    width: 10px;
+}
+td.noteContent {
+    border: 0px solid white;
+    width: *;
+}
+tr.cond {
+    background-color: #F0F0C0;
+    cursor:default;
+}
+#cond,
+#cond *,
+#cond * * {
+    background-color: #F0F0C0;
+    cursor:default;
+}
+#cond #cond,
+#cond #cond *,
+#cond #cond * * {
+    background-color: #FBDFC7;
+    cursor:default;
+}
+#cond #cond #cond,
+#cond #cond #cond *,
+#cond #cond #cond * * {
+    background-color: #ABCBCB;
+    cursor:default;
+}
+div.popup {
+    visibility:hidden;
+    position:absolute;
+    top:0;
+    left:0;
+}
+table.popup {
+    border-width: 2px;
+    border-spacing: 0px;
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-right-style: solid;
+    border-left-style: solid;
+    border-color: #76461f;
+    border-collapse: collapse;
+    width: auto;
+}
+th.popup {
+    font: 10pt Arial,verdana,sans-serif;
+    border-width: 1px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-color: #76461f;
+    background-color: #B6865E;
+    text-align: left;
+}
+td.popup {
+    font: 10pt Arial,verdana,sans-serif;
+    border-width: 1px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-style: none;
+    vertical-align: text-top ;
+    background-color: #DBAF8B;
+}</style>
+</head><body><div class="fulldoc" id="top">
+<h1 id="ad7771">1. Ad7771</h1>
+<table id="regmap.ad7771"><caption>Main Summary</caption>
+   <tr><th>Address</th><th>Name</th><th>Reset</th><th>Description</th></tr>
+   <tr><td>0x00</td><td><a href="#ad7771.channel_cfg">channel_cfg[0]</a></td><td>0x00</td><td>Channel 0 configuration</td></tr>
+   <tr><td>0x01</td><td><a href="#ad7771.channel_cfg">channel_cfg[1]</a></td><td>0x00</td><td>Channel 1 configuration</td></tr>
+   <tr><td>0x02</td><td><a href="#ad7771.channel_cfg">channel_cfg[2]</a></td><td>0x00</td><td>Channel 2 configuration</td></tr>
+   <tr><td>0x03</td><td><a href="#ad7771.channel_cfg">channel_cfg[3]</a></td><td>0x00</td><td>Channel 3 configuration</td></tr>
+   <tr><td>0x04</td><td><a href="#ad7771.channel_cfg">channel_cfg[4]</a></td><td>0x00</td><td>Channel 4 configuration</td></tr>
+   <tr><td>0x05</td><td><a href="#ad7771.channel_cfg">channel_cfg[5]</a></td><td>0x00</td><td>Channel 5 configuration</td></tr>
+   <tr><td>0x06</td><td><a href="#ad7771.channel_cfg">channel_cfg[6]</a></td><td>0x00</td><td>Channel 6 configuration</td></tr>
+   <tr><td>0x07</td><td><a href="#ad7771.channel_cfg">channel_cfg[7]</a></td><td>0x00</td><td>Channel 7 configuration</td></tr>
+   <tr><td>0x08</td><td><a href="#ad7771.clock_disable">clock_disable</a></td><td>0x00</td><td>Clock disable per channel</td></tr>
+   <tr><td>0x09</td><td><a href="#ad7771.channel_sync_offset">channel_sync_offset[0]</a></td><td>0x00</td><td>Channel 0 Sync offset</td></tr>
+   <tr><td>0x0A</td><td><a href="#ad7771.channel_sync_offset">channel_sync_offset[1]</a></td><td>0x00</td><td>Channel 1 Sync offset</td></tr>
+   <tr><td>0x0B</td><td><a href="#ad7771.channel_sync_offset">channel_sync_offset[2]</a></td><td>0x00</td><td>Channel 2 Sync offset</td></tr>
+   <tr><td>0x0C</td><td><a href="#ad7771.channel_sync_offset">channel_sync_offset[3]</a></td><td>0x00</td><td>Channel 3 Sync offset</td></tr>
+   <tr><td>0x0D</td><td><a href="#ad7771.channel_sync_offset">channel_sync_offset[4]</a></td><td>0x00</td><td>Channel 4 Sync offset</td></tr>
+   <tr><td>0x0E</td><td><a href="#ad7771.channel_sync_offset">channel_sync_offset[5]</a></td><td>0x00</td><td>Channel 5 Sync offset</td></tr>
+   <tr><td>0x0F</td><td><a href="#ad7771.channel_sync_offset">channel_sync_offset[6]</a></td><td>0x00</td><td>Channel 6 Sync offset</td></tr>
+   <tr><td>0x10</td><td><a href="#ad7771.channel_sync_offset">channel_sync_offset[7]</a></td><td>0x00</td><td>Channel 7 Sync offset</td></tr>
+   <tr><td>0x11</td><td><a href="#ad7771.user_cfg1">user_cfg1</a></td><td>0x24</td><td>General user configuration 1 (power-down/reset)</td></tr>
+   <tr><td>0x12</td><td><a href="#ad7771.user_cfg2">user_cfg2</a></td><td>0x08</td><td>General user configuration 2 (drive/filter)</td></tr>
+   <tr><td>0x13</td><td><a href="#ad7771.user_cfg3">user_cfg3</a></td><td>0x80</td><td>General user configuration 3</td></tr>
+   <tr><td>0x14</td><td><a href="#ad7771.data_output">data_output</a></td><td>0x00</td><td>Data output format</td></tr>
+   <tr><td>0x15</td><td><a href="#ad7771.mux_ctrl_ref_mtr">mux_ctrl_ref_mtr</a></td><td>0x00</td><td>ADC/Reference muc control</td></tr>
+   <tr><td>0x16</td><td><a href="#ad7771.mux_ctrl_global">mux_ctrl_global</a></td><td>0x00</td><td>ADC/Reference muc control</td></tr>
+   <tr><td>0x17</td><td><a href="#ad7771.gpio_cfg">gpio_cfg</a></td><td>0x00</td><td>GPIO configuration register</td></tr>
+   <tr><td>0x18</td><td><a href="#ad7771.gpio_data">gpio_data</a></td><td>0x00</td><td>GPIO configuration register</td></tr>
+   <tr><td>0x19</td><td><a href="#ad7771.buffer_cfg1">buffer_cfg1</a></td><td>0x18</td><td>Buffer configuration 1</td></tr>
+   <tr><td>0x1A</td><td><a href="#ad7771.buffer_cfg2">buffer_cfg2</a></td><td>0xC7</td><td>Buffer configuration (reference)</td></tr>
+   <tr><td>0x1B</td><td><a href="#ad7771.channel_offset_up">channel_offset_up[0]</a></td><td>0x00</td><td>Channel 0 offset (upper byte)</td></tr>
+   <tr><td>0x1C</td><td><a href="#ad7771.channel_offset_up">channel_offset_up[1]</a></td><td>0x00</td><td>Channel 1 offset (upper byte)</td></tr>
+   <tr><td>0x1D</td><td><a href="#ad7771.channel_offset_up">channel_offset_up[2]</a></td><td>0x00</td><td>Channel 2 offset (upper byte)</td></tr>
+   <tr><td>0x1E</td><td><a href="#ad7771.channel_offset_up">channel_offset_up[3]</a></td><td>0x00</td><td>Channel 3 offset (upper byte)</td></tr>
+   <tr><td>0x1F</td><td><a href="#ad7771.channel_offset_up">channel_offset_up[4]</a></td><td>0x00</td><td>Channel 4 offset (upper byte)</td></tr>
+   <tr><td>0x20</td><td><a href="#ad7771.channel_offset_up">channel_offset_up[5]</a></td><td>0x00</td><td>Channel 5 offset (upper byte)</td></tr>
+   <tr><td>0x21</td><td><a href="#ad7771.channel_offset_up">channel_offset_up[6]</a></td><td>0x00</td><td>Channel 6 offset (upper byte)</td></tr>
+   <tr><td>0x22</td><td><a href="#ad7771.channel_offset_up">channel_offset_up[7]</a></td><td>0x00</td><td>Channel 7 offset (upper byte)</td></tr>
+   <tr><td>0x23</td><td><a href="#ad7771.channel_offset_mid">channel_offset_mid[0]</a></td><td>0x00</td><td>Channel 0 offset (middle byte)</td></tr>
+   <tr><td>0x24</td><td><a href="#ad7771.channel_offset_mid">channel_offset_mid[1]</a></td><td>0x00</td><td>Channel 1 offset (middle byte)</td></tr>
+   <tr><td>0x25</td><td><a href="#ad7771.channel_offset_mid">channel_offset_mid[2]</a></td><td>0x00</td><td>Channel 2 offset (middle byte)</td></tr>
+   <tr><td>0x26</td><td><a href="#ad7771.channel_offset_mid">channel_offset_mid[3]</a></td><td>0x00</td><td>Channel 3 offset (middle byte)</td></tr>
+   <tr><td>0x27</td><td><a href="#ad7771.channel_offset_mid">channel_offset_mid[4]</a></td><td>0x00</td><td>Channel 4 offset (middle byte)</td></tr>
+   <tr><td>0x28</td><td><a href="#ad7771.channel_offset_mid">channel_offset_mid[5]</a></td><td>0x00</td><td>Channel 5 offset (middle byte)</td></tr>
+   <tr><td>0x29</td><td><a href="#ad7771.channel_offset_mid">channel_offset_mid[6]</a></td><td>0x00</td><td>Channel 6 offset (middle byte)</td></tr>
+   <tr><td>0x2A</td><td><a href="#ad7771.channel_offset_mid">channel_offset_mid[7]</a></td><td>0x00</td><td>Channel 7 offset (middle byte)</td></tr>
+   <tr><td>0x2B</td><td><a href="#ad7771.channel_offset_low">channel_offset_low[0]</a></td><td>0x00</td><td>Channel 0 offset (lower byte)</td></tr>
+   <tr><td>0x2C</td><td><a href="#ad7771.channel_offset_low">channel_offset_low[1]</a></td><td>0x00</td><td>Channel 1 offset (lower byte)</td></tr>
+   <tr><td>0x2D</td><td><a href="#ad7771.channel_offset_low">channel_offset_low[2]</a></td><td>0x00</td><td>Channel 2 offset (lower byte)</td></tr>
+   <tr><td>0x2E</td><td><a href="#ad7771.channel_offset_low">channel_offset_low[3]</a></td><td>0x00</td><td>Channel 3 offset (lower byte)</td></tr>
+   <tr><td>0x2F</td><td><a href="#ad7771.channel_offset_low">channel_offset_low[4]</a></td><td>0x00</td><td>Channel 4 offset (lower byte)</td></tr>
+   <tr><td>0x30</td><td><a href="#ad7771.channel_offset_low">channel_offset_low[5]</a></td><td>0x00</td><td>Channel 5 offset (lower byte)</td></tr>
+   <tr><td>0x31</td><td><a href="#ad7771.channel_offset_low">channel_offset_low[6]</a></td><td>0x00</td><td>Channel 6 offset (lower byte)</td></tr>
+   <tr><td>0x32</td><td><a href="#ad7771.channel_offset_low">channel_offset_low[7]</a></td><td>0x00</td><td>Channel 7 offset (lower byte)</td></tr>
+   <tr><td>0x33</td><td><a href="#ad7771.channel_gain_up">channel_gain_up[0]</a></td><td>0x00</td><td>Channel 0 gain (upper byte)</td></tr>
+   <tr><td>0x34</td><td><a href="#ad7771.channel_gain_up">channel_gain_up[1]</a></td><td>0x00</td><td>Channel 1 gain (upper byte)</td></tr>
+   <tr><td>0x35</td><td><a href="#ad7771.channel_gain_up">channel_gain_up[2]</a></td><td>0x00</td><td>Channel 2 gain (upper byte)</td></tr>
+   <tr><td>0x36</td><td><a href="#ad7771.channel_gain_up">channel_gain_up[3]</a></td><td>0x00</td><td>Channel 3 gain (upper byte)</td></tr>
+   <tr><td>0x37</td><td><a href="#ad7771.channel_gain_up">channel_gain_up[4]</a></td><td>0x00</td><td>Channel 4 gain (upper byte)</td></tr>
+   <tr><td>0x38</td><td><a href="#ad7771.channel_gain_up">channel_gain_up[5]</a></td><td>0x00</td><td>Channel 5 gain (upper byte)</td></tr>
+   <tr><td>0x39</td><td><a href="#ad7771.channel_gain_up">channel_gain_up[6]</a></td><td>0x00</td><td>Channel 6 gain (upper byte)</td></tr>
+   <tr><td>0x3A</td><td><a href="#ad7771.channel_gain_up">channel_gain_up[7]</a></td><td>0x00</td><td>Channel 7 gain (upper byte)</td></tr>
+   <tr><td>0x3B</td><td><a href="#ad7771.channel_gain_mid">channel_gain_mid[0]</a></td><td>0x00</td><td>Channel 0 gain (middle byte)</td></tr>
+   <tr><td>0x3C</td><td><a href="#ad7771.channel_gain_mid">channel_gain_mid[1]</a></td><td>0x00</td><td>Channel 1 gain (middle byte)</td></tr>
+   <tr><td>0x3D</td><td><a href="#ad7771.channel_gain_mid">channel_gain_mid[2]</a></td><td>0x00</td><td>Channel 2 gain (middle byte)</td></tr>
+   <tr><td>0x3E</td><td><a href="#ad7771.channel_gain_mid">channel_gain_mid[3]</a></td><td>0x00</td><td>Channel 3 gain (middle byte)</td></tr>
+   <tr><td>0x3F</td><td><a href="#ad7771.channel_gain_mid">channel_gain_mid[4]</a></td><td>0x00</td><td>Channel 4 gain (middle byte)</td></tr>
+   <tr><td>0x40</td><td><a href="#ad7771.channel_gain_mid">channel_gain_mid[5]</a></td><td>0x00</td><td>Channel 5 gain (middle byte)</td></tr>
+   <tr><td>0x41</td><td><a href="#ad7771.channel_gain_mid">channel_gain_mid[6]</a></td><td>0x00</td><td>Channel 6 gain (middle byte)</td></tr>
+   <tr><td>0x42</td><td><a href="#ad7771.channel_gain_mid">channel_gain_mid[7]</a></td><td>0x00</td><td>Channel 7 gain (middle byte)</td></tr>
+   <tr><td>0x43</td><td><a href="#ad7771.channel_gain_low">channel_gain_low[0]</a></td><td>0x00</td><td>Channel 0 gain (lower byte)</td></tr>
+   <tr><td>0x44</td><td><a href="#ad7771.channel_gain_low">channel_gain_low[1]</a></td><td>0x00</td><td>Channel 1 gain (lower byte)</td></tr>
+   <tr><td>0x45</td><td><a href="#ad7771.channel_gain_low">channel_gain_low[2]</a></td><td>0x00</td><td>Channel 2 gain (lower byte)</td></tr>
+   <tr><td>0x46</td><td><a href="#ad7771.channel_gain_low">channel_gain_low[3]</a></td><td>0x00</td><td>Channel 3 gain (lower byte)</td></tr>
+   <tr><td>0x47</td><td><a href="#ad7771.channel_gain_low">channel_gain_low[4]</a></td><td>0x00</td><td>Channel 4 gain (lower byte)</td></tr>
+   <tr><td>0x48</td><td><a href="#ad7771.channel_gain_low">channel_gain_low[5]</a></td><td>0x00</td><td>Channel 5 gain (lower byte)</td></tr>
+   <tr><td>0x49</td><td><a href="#ad7771.channel_gain_low">channel_gain_low[6]</a></td><td>0x00</td><td>Channel 6 gain (lower byte)</td></tr>
+   <tr><td>0x4A</td><td><a href="#ad7771.channel_gain_low">channel_gain_low[7]</a></td><td>0x00</td><td>Channel 7 gain (lower byte)</td></tr>
+   <tr><td>0x4B</td><td><a href="#ad7771.channel_status">channel_status[0]</a></td><td>0x00</td><td>Channel 0 status</td></tr>
+   <tr><td>0x4C</td><td><a href="#ad7771.channel_status">channel_status[1]</a></td><td>0x00</td><td>Channel 1 status</td></tr>
+   <tr><td>0x4D</td><td><a href="#ad7771.channel_status">channel_status[2]</a></td><td>0x00</td><td>Channel 2 status</td></tr>
+   <tr><td>0x4E</td><td><a href="#ad7771.channel_status">channel_status[3]</a></td><td>0x00</td><td>Channel 3 status</td></tr>
+   <tr><td>0x4F</td><td><a href="#ad7771.channel_status">channel_status[4]</a></td><td>0x00</td><td>Channel 4 status</td></tr>
+   <tr><td>0x50</td><td><a href="#ad7771.channel_status">channel_status[5]</a></td><td>0x00</td><td>Channel 5 status</td></tr>
+   <tr><td>0x51</td><td><a href="#ad7771.channel_status">channel_status[6]</a></td><td>0x00</td><td>Channel 6 status</td></tr>
+   <tr><td>0x52</td><td><a href="#ad7771.channel_status">channel_status[7]</a></td><td>0x00</td><td>Channel 7 status</td></tr>
+   <tr><td>0x53</td><td><a href="#ad7771.channel_dsp_err">channel_dsp_err[0]</a></td><td>0x00</td><td>Channel 0/1 DSP errors</td></tr>
+   <tr><td>0x54</td><td><a href="#ad7771.channel_dsp_err">channel_dsp_err[1]</a></td><td>0x00</td><td>Channel 2/3 DSP errors</td></tr>
+   <tr><td>0x55</td><td><a href="#ad7771.channel_dsp_err">channel_dsp_err[2]</a></td><td>0x00</td><td>Channel 4/5 DSP errors</td></tr>
+   <tr><td>0x56</td><td><a href="#ad7771.channel_dsp_err">channel_dsp_err[3]</a></td><td>0x00</td><td>Channel 6/7 DSP errors</td></tr>
+   <tr><td>0x57</td><td><a href="#ad7771.channel_test_en">channel_test_en</a></td><td>0xFE</td><td>Channel 0 to 7 test enable</td></tr>
+   <tr><td>0x58</td><td><a href="#ad7771.general_err1">general_err1</a></td><td>0x00</td><td>General Error 1</td></tr>
+   <tr><td>0x59</td><td><a href="#ad7771.general_err1_en">general_err1_en</a></td><td>0x3E</td><td>General Error 1 Enable</td></tr>
+   <tr><td>0x5A</td><td><a href="#ad7771.general_err2">general_err2</a></td><td>0x00</td><td>General Error 2</td></tr>
+   <tr><td>0x5B</td><td><a href="#ad7771.general_err2_en">general_err2_en</a></td><td>0x2C</td><td>General Error 2</td></tr>
+   <tr><td>0x5C</td><td><a href="#ad7771.error_status1">error_status1</a></td><td>0x00</td><td>Error Status 1</td></tr>
+   <tr><td>0x5D</td><td><a href="#ad7771.error_status2">error_status2</a></td><td>0x00</td><td>Error Status 2</td></tr>
+   <tr><td>0x5E</td><td><a href="#ad7771.error_status3">error_status3</a></td><td>0x00</td><td>Error Status 3</td></tr>
+   <tr><td>0x5F</td><td><a href="#ad7771.src_n_msb">src_n_msb</a></td><td>0x00</td><td>Sample Rate converter N MSB</td></tr>
+   <tr><td>0x60</td><td><a href="#ad7771.src_n_lsb">src_n_lsb</a></td><td>0x00</td><td>Sample Rate converter N LSB</td></tr>
+   <tr><td>0x61</td><td><a href="#ad7771.src_if_msb">src_if_msb</a></td><td>0x00</td><td>Sample Rate converter IF MSB</td></tr>
+   <tr><td>0x62</td><td><a href="#ad7771.src_if_lsb">src_if_lsb</a></td><td>0x00</td><td>Sample Rate converter IF LSB</td></tr>
+   <tr><td>0x63</td><td><a href="#ad7771.src_load">src_load</a></td><td>0x00</td><td>Sample Rate converter load</td></tr>
+</table>
+<h3 id="ad7771.channel_cfg">1.1.1 Channel  configuration (channel_cfg)</h3>
+<table class="noborders" id="reginsts.ad7771.channel_cfg">
+   <tr><th class="noborders">Offset</th><th width="33%" class="noborders">Name</th><th class="noborders">Reset</th><th class="noborders">Description</th></tr>
+   <tr id="inst.ad7771.channel_cfg[0]"><td class="noborders">0x00</td><td class="noborders">channel_cfg[0]</td><td class="noborders">0x00</td><td class="noborders">Channel 0 configuration</td></tr>
+   <tr id="inst.ad7771.channel_cfg[1]"><td class="noborders">0x01</td><td class="noborders">channel_cfg[1]</td><td class="noborders">0x00</td><td class="noborders">Channel 1 configuration</td></tr>
+   <tr id="inst.ad7771.channel_cfg[2]"><td class="noborders">0x02</td><td class="noborders">channel_cfg[2]</td><td class="noborders">0x00</td><td class="noborders">Channel 2 configuration</td></tr>
+   <tr id="inst.ad7771.channel_cfg[3]"><td class="noborders">0x03</td><td class="noborders">channel_cfg[3]</td><td class="noborders">0x00</td><td class="noborders">Channel 3 configuration</td></tr>
+   <tr id="inst.ad7771.channel_cfg[4]"><td class="noborders">0x04</td><td class="noborders">channel_cfg[4]</td><td class="noborders">0x00</td><td class="noborders">Channel 4 configuration</td></tr>
+   <tr id="inst.ad7771.channel_cfg[5]"><td class="noborders">0x05</td><td class="noborders">channel_cfg[5]</td><td class="noborders">0x00</td><td class="noborders">Channel 5 configuration</td></tr>
+   <tr id="inst.ad7771.channel_cfg[6]"><td class="noborders">0x06</td><td class="noborders">channel_cfg[6]</td><td class="noborders">0x00</td><td class="noborders">Channel 6 configuration</td></tr>
+   <tr id="inst.ad7771.channel_cfg[7]"><td class="noborders">0x07</td><td class="noborders">channel_cfg[7]</td><td class="noborders">0x00</td><td class="noborders">Channel 7 configuration</td></tr>
+</table>
+<table class="map" id="layout.ad7771.channel_cfg">
+  <tr><td width="*" class="map"></td>
+<td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td></tr>
+   <tr><td class="map">Bit</td><td class="map" colspan="4">7</td><td class="map" colspan="4">6</td><td class="map" colspan="4">5</td><td class="map" colspan="4">4</td><td class="map" colspan="4">3</td><td class="map" colspan="4">2</td><td class="map" colspan="4">1</td><td class="map" colspan="4">0</td></tr>
+   <tr><td class="map">Field</td><td class="map" colspan="8">gain</td><td class="map" colspan="4">ref_mon</td><td class="map" colspan="4">rx</td><td class="map" colspan="16">bias</td></tr>
+   <tr><td class="map">Reset</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td></tr>
+</table>
+<table id="fields.ad7771.channel_cfg">
+   <tr><th>Bits</th><th>Name</th><th>Access</th><th>Reset</th><th>Description</th></tr>
+   <tr id="ad7771.channel_cfg.gain"><td>7:6</td><td>gain</td><td>RW</td><td>0</td><td>AFE Gain (power of 2)</td></tr>
+   <tr id="ad7771.channel_cfg.ref_mon"><td>5</td><td>ref_mon</td><td>RW</td><td>0</td><td>Channel used as reference monitor</td></tr>
+   <tr id="ad7771.channel_cfg.rx"><td>4</td><td>rx</td><td>RW</td><td>0</td><td>Channel meter Mux RX mode</td></tr>
+   <tr id="ad7771.channel_cfg.bias"><td>3:0</td><td>bias</td><td>RW</td><td>0</td><td>Hidden tuning register</td></tr>
+</table>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#regmap.ad7771">Page summary</a>
+<h3 id="ad7771.clock_disable">1.1.2 Clock disable per channel (clock_disable)</h3>
+<table class="noborders" id="reginsts.ad7771.clock_disable">
+   <tr><th class="noborders">Offset</th><th width="33%" class="noborders">Name</th><th class="noborders">Reset</th></tr>
+   <tr id="inst.ad7771.clock_disable"><td class="noborders">0x08</td><td class="noborders">clock_disable</td><td class="noborders">0x00</td></tr>
+</table>
+<table class="map" id="layout.ad7771.clock_disable">
+  <tr><td width="*" class="map"></td>
+<td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td></tr>
+   <tr><td class="map">Bit</td><td class="map" colspan="4">7</td><td class="map" colspan="4">6</td><td class="map" colspan="4">5</td><td class="map" colspan="4">4</td><td class="map" colspan="4">3</td><td class="map" colspan="4">2</td><td class="map" colspan="4">1</td><td class="map" colspan="4">0</td></tr>
+   <tr><td class="map">Field</td><td class="map" colspan="4">disable_ch7</td><td class="map" colspan="4">disable_ch6</td><td class="map" colspan="4">disable_ch5</td><td class="map" colspan="4">disable_ch4</td><td class="map" colspan="4">disable_ch3</td><td class="map" colspan="4">disable_ch2</td><td class="map" colspan="4">disable_ch1</td><td class="map" colspan="4">disable_ch0</td></tr>
+   <tr><td class="map">Reset</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td></tr>
+</table>
+<table id="fields.ad7771.clock_disable">
+   <tr><th>Bits</th><th>Name</th><th>Access</th><th>Reset</th><th>Description</th></tr>
+   <tr id="ad7771.clock_disable.disable_ch7"><td>7</td><td>disable_ch7</td><td>RW</td><td>0</td><td>Channel 7 Disable</td></tr>
+   <tr id="ad7771.clock_disable.disable_ch6"><td>6</td><td>disable_ch6</td><td>RW</td><td>0</td><td>Channel 6 Disable</td></tr>
+   <tr id="ad7771.clock_disable.disable_ch5"><td>5</td><td>disable_ch5</td><td>RW</td><td>0</td><td>Channel 5 Disable</td></tr>
+   <tr id="ad7771.clock_disable.disable_ch4"><td>4</td><td>disable_ch4</td><td>RW</td><td>0</td><td>Channel 4 Disable</td></tr>
+   <tr id="ad7771.clock_disable.disable_ch3"><td>3</td><td>disable_ch3</td><td>RW</td><td>0</td><td>Channel 3 Disable</td></tr>
+   <tr id="ad7771.clock_disable.disable_ch2"><td>2</td><td>disable_ch2</td><td>RW</td><td>0</td><td>Channel 2 Disable</td></tr>
+   <tr id="ad7771.clock_disable.disable_ch1"><td>1</td><td>disable_ch1</td><td>RW</td><td>0</td><td>Channel 1 Disable</td></tr>
+   <tr id="ad7771.clock_disable.disable_ch0"><td>0</td><td>disable_ch0</td><td>RW</td><td>0</td><td>Channel 0 Disable</td></tr>
+</table>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#regmap.ad7771">Page summary</a>
+<h3 id="ad7771.channel_sync_offset">1.1.3 Channel  Sync offset (channel_sync_offset)</h3>
+<table class="noborders" id="reginsts.ad7771.channel_sync_offset">
+   <tr><th class="noborders">Offset</th><th width="33%" class="noborders">Name</th><th class="noborders">Reset</th><th class="noborders">Description</th></tr>
+   <tr id="inst.ad7771.channel_sync_offset[0]"><td class="noborders">0x09</td><td class="noborders">channel_sync_offset[0]</td><td class="noborders">0x00</td><td class="noborders">Channel 0 Sync offset</td></tr>
+   <tr id="inst.ad7771.channel_sync_offset[1]"><td class="noborders">0x0A</td><td class="noborders">channel_sync_offset[1]</td><td class="noborders">0x00</td><td class="noborders">Channel 1 Sync offset</td></tr>
+   <tr id="inst.ad7771.channel_sync_offset[2]"><td class="noborders">0x0B</td><td class="noborders">channel_sync_offset[2]</td><td class="noborders">0x00</td><td class="noborders">Channel 2 Sync offset</td></tr>
+   <tr id="inst.ad7771.channel_sync_offset[3]"><td class="noborders">0x0C</td><td class="noborders">channel_sync_offset[3]</td><td class="noborders">0x00</td><td class="noborders">Channel 3 Sync offset</td></tr>
+   <tr id="inst.ad7771.channel_sync_offset[4]"><td class="noborders">0x0D</td><td class="noborders">channel_sync_offset[4]</td><td class="noborders">0x00</td><td class="noborders">Channel 4 Sync offset</td></tr>
+   <tr id="inst.ad7771.channel_sync_offset[5]"><td class="noborders">0x0E</td><td class="noborders">channel_sync_offset[5]</td><td class="noborders">0x00</td><td class="noborders">Channel 5 Sync offset</td></tr>
+   <tr id="inst.ad7771.channel_sync_offset[6]"><td class="noborders">0x0F</td><td class="noborders">channel_sync_offset[6]</td><td class="noborders">0x00</td><td class="noborders">Channel 6 Sync offset</td></tr>
+   <tr id="inst.ad7771.channel_sync_offset[7]"><td class="noborders">0x10</td><td class="noborders">channel_sync_offset[7]</td><td class="noborders">0x00</td><td class="noborders">Channel 7 Sync offset</td></tr>
+</table>
+<table class="map" id="layout.ad7771.channel_sync_offset">
+  <tr><td width="*" class="map"></td>
+<td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td></tr>
+   <tr><td class="map">Bit</td><td class="map" colspan="4">7</td><td class="map" colspan="4">6</td><td class="map" colspan="4">5</td><td class="map" colspan="4">4</td><td class="map" colspan="4">3</td><td class="map" colspan="4">2</td><td class="map" colspan="4">1</td><td class="map" colspan="4">0</td></tr>
+   <tr><td class="map">Field</td><td class="map" colspan="32">sync_offset</td></tr>
+   <tr><td class="map">Reset</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td></tr>
+</table>
+<table id="fields.ad7771.channel_sync_offset">
+   <tr><th>Bits</th><th>Name</th><th>Access</th><th>Reset</th><th>Description</th></tr>
+   <tr id="ad7771.channel_sync_offset.sync_offset"><td>7:0</td><td>sync_offset</td><td>RW</td><td>0</td><td>Sync offset</td></tr>
+</table>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#regmap.ad7771">Page summary</a>
+<h3 id="ad7771.user_cfg1">1.1.4 General user configuration 1 (power-down/reset) (user_cfg1)</h3>
+<table class="noborders" id="reginsts.ad7771.user_cfg1">
+   <tr><th class="noborders">Offset</th><th width="33%" class="noborders">Name</th><th class="noborders">Reset</th></tr>
+   <tr id="inst.ad7771.user_cfg1"><td class="noborders">0x11</td><td class="noborders">user_cfg1</td><td class="noborders">0x24</td></tr>
+</table>
+<table class="map" id="layout.ad7771.user_cfg1">
+  <tr><td width="*" class="map"></td>
+<td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td></tr>
+   <tr><td class="map">Bit</td><td class="map" colspan="4">7</td><td class="map" colspan="4">6</td><td class="map" colspan="4">5</td><td class="map" colspan="4">4</td><td class="map" colspan="4">3</td><td class="map" colspan="4">2</td><td class="map" colspan="4">1</td><td class="map" colspan="4">0</td></tr>
+   <tr><td class="map">Field</td><td class="mapv" colspan="4">all_ch_dis_mclk</td><td class="map" colspan="4">power_mode</td><td class="map" colspan="4">pdb_vcm</td><td class="map" colspan="4">pdb_refout</td><td class="map" colspan="4">pdb_sar</td><td class="map" colspan="4">pdb_rc_osc</td><td class="map" colspan="8">soft_reset</td></tr>
+   <tr><td class="map">Reset</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">1</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">1</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td></tr>
+</table>
+<table id="fields.ad7771.user_cfg1">
+   <tr><th>Bits</th><th>Name</th><th>Access</th><th>Reset</th><th>Description</th></tr>
+   <tr id="ad7771.user_cfg1.all_ch_dis_mclk"><td>7</td><td>all_ch_dis_mclk</td><td>RW</td><td>0</td><td>Keep DCLK even when all channel are disabled</td></tr>
+   <tr id="ad7771.user_cfg1.power_mode"><td>6</td><td>power_mode</td><td>RW</td><td>0</td><td>Power down VCM buffer (active low)<table class="noborders">
+   <tr><td class="enum-name">0&nbsp;(LOW_PWR)</td><td width="*" class="enum-desc">Low power (1/4)</td></tr>
+   <tr><td class="enum-name">1&nbsp;(HIGH_RES)</td><td width="*" class="enum-desc">High resolution</td></tr>
+</table>
+</td></tr>
+   <tr id="ad7771.user_cfg1.pdb_vcm"><td>5</td><td>pdb_vcm</td><td>RW</td><td>1</td><td>Power down VCM buffer (active low)</td></tr>
+   <tr id="ad7771.user_cfg1.pdb_refout"><td>4</td><td>pdb_refout</td><td>RW</td><td>0</td><td>Power down Reference output buffer (active low)</td></tr>
+   <tr id="ad7771.user_cfg1.pdb_sar"><td>3</td><td>pdb_sar</td><td>RW</td><td>0</td><td>Power down SAR (active low)</td></tr>
+   <tr id="ad7771.user_cfg1.pdb_rc_osc"><td>2</td><td>pdb_rc_osc</td><td>RW</td><td>1</td><td>Power down internal oscillator (active low)</td></tr>
+   <tr id="ad7771.user_cfg1.soft_reset"><td>1:0</td><td>soft_reset</td><td>RW</td><td>0</td><td>Soft reset<table class="noborders">
+   <tr><td class="enum-name">0&nbsp;(NONE)</td><td width="*" class="enum-desc">No effect</td></tr>
+   <tr><td class="enum-name">2&nbsp;(SECOND)</td><td width="*" class="enum-desc">2nd write</td></tr>
+   <tr><td class="enum-name">3&nbsp;(FIRST)</td><td width="*" class="enum-desc">1st write</td></tr>
+</table>
+</td></tr>
+</table>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#regmap.ad7771">Page summary</a>
+<h3 id="ad7771.user_cfg2">1.1.5 General user configuration 2 (drive/filter) (user_cfg2)</h3>
+<table class="noborders" id="reginsts.ad7771.user_cfg2">
+   <tr><th class="noborders">Offset</th><th width="33%" class="noborders">Name</th><th class="noborders">Reset</th></tr>
+   <tr id="inst.ad7771.user_cfg2"><td class="noborders">0x12</td><td class="noborders">user_cfg2</td><td class="noborders">0x08</td></tr>
+</table>
+<table class="map" id="layout.ad7771.user_cfg2">
+  <tr><td width="*" class="map"></td>
+<td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td></tr>
+   <tr><td class="map">Bit</td><td class="map" colspan="4">7</td><td class="map" colspan="4">6</td><td class="map" colspan="4">5</td><td class="map" colspan="4">4</td><td class="map" colspan="4">3</td><td class="map" colspan="4">2</td><td class="map" colspan="4">1</td><td class="map" colspan="4">0</td></tr>
+   <tr><td class="map">Field</td><td class="rsvd" colspan="4"></td><td class="map" colspan="4">filter_mode</td><td class="map" colspan="4">sar_diag_en</td><td class="map" colspan="8">sdo_drive_str</td><td class="map" colspan="8">dout_drive_str</td><td class="map" colspan="4">spi_sync</td></tr>
+   <tr><td class="map">Reset</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">1</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td></tr>
+</table>
+<table id="fields.ad7771.user_cfg2">
+   <tr><th>Bits</th><th>Name</th><th>Access</th><th>Reset</th><th>Description</th></tr>
+   <tr id="ad7771.user_cfg2.filter_mode"><td>6</td><td>filter_mode</td><td>RW</td><td>0</td><td>Power down VCM buffer (active low)<table class="noborders">
+   <tr><td class="enum-name">0&nbsp;(SINC3)</td><td width="*" class="enum-desc">3-tap Sinc</td></tr>
+   <tr><td class="enum-name">1&nbsp;(SINC5)</td><td width="*" class="enum-desc">5-tap Sinc</td></tr>
+</table>
+</td></tr>
+   <tr id="ad7771.user_cfg2.sar_diag_en"><td>5</td><td>sar_diag_en</td><td>RW</td><td>0</td><td>Sets SPI interface to read back SAR result on SDO</td></tr>
+   <tr id="ad7771.user_cfg2.sdo_drive_str"><td>4:3</td><td>sdo_drive_str</td><td>RW</td><td>1</td><td>Configure drive strength for SDO<table class="noborders">
+   <tr><td class="enum-name">0&nbsp;(NOMINAL)</td><td width="*" class="enum-desc">Nominal</td></tr>
+   <tr><td class="enum-name">1&nbsp;(STRONG)</td><td width="*" class="enum-desc">Strong</td></tr>
+   <tr><td class="enum-name">2&nbsp;(WEAK)</td><td width="*" class="enum-desc">Weak</td></tr>
+   <tr><td class="enum-name">3&nbsp;(EXTRA_STRONG)</td><td width="*" class="enum-desc">Extra Strong</td></tr>
+</table>
+</td></tr>
+   <tr id="ad7771.user_cfg2.dout_drive_str"><td>2:1</td><td>dout_drive_str</td><td>RW</td><td>0</td><td>Configure drive strength for DOUT<table class="noborders">
+   <tr><td class="enum-name">0&nbsp;(NOMINAL)</td><td width="*" class="enum-desc">Nominal</td></tr>
+   <tr><td class="enum-name">1&nbsp;(STRONG)</td><td width="*" class="enum-desc">Strong</td></tr>
+   <tr><td class="enum-name">2&nbsp;(WEAK)</td><td width="*" class="enum-desc">Weak</td></tr>
+   <tr><td class="enum-name">3&nbsp;(EXTRA_STRONG)</td><td width="*" class="enum-desc">Extra Strong</td></tr>
+</table>
+</td></tr>
+   <tr id="ad7771.user_cfg2.spi_sync"><td>0</td><td>spi_sync</td><td>RW</td><td>0</td><td>SYNC pulse generated through SPI<br/>When low, this signal is AND’ed with the value on the START pin in the control module and generates a pulse in the SYNC_IN pin.<br/>When high, this bit is AND’ed with the value on START pin in the control module</td></tr>
+</table>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#regmap.ad7771">Page summary</a>
+<h3 id="ad7771.user_cfg3">1.1.6 General user configuration 3 (user_cfg3)</h3>
+<table class="noborders" id="reginsts.ad7771.user_cfg3">
+   <tr><th class="noborders">Offset</th><th width="33%" class="noborders">Name</th><th class="noborders">Reset</th></tr>
+   <tr id="inst.ad7771.user_cfg3"><td class="noborders">0x13</td><td class="noborders">user_cfg3</td><td class="noborders">0x80</td></tr>
+</table>
+<table class="map" id="layout.ad7771.user_cfg3">
+  <tr><td width="*" class="map"></td>
+<td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td></tr>
+   <tr><td class="map">Bit</td><td class="map" colspan="4">7</td><td class="map" colspan="4">6</td><td class="map" colspan="4">5</td><td class="map" colspan="4">4</td><td class="map" colspan="4">3</td><td class="map" colspan="4">2</td><td class="map" colspan="4">1</td><td class="map" colspan="4">0</td></tr>
+   <tr><td class="map">Field</td><td class="map" colspan="8">convst_deglitch_dis</td><td class="rsvd" colspan="4"></td><td class="mapv" colspan="4">spi_subordinate</td><td class="rsvd" colspan="12"></td><td class="mapv" colspan="4">clk_qual_dis</td></tr>
+   <tr><td class="map">Reset</td><td class="map" colspan="4">1</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td></tr>
+</table>
+<table id="fields.ad7771.user_cfg3">
+   <tr><th>Bits</th><th>Name</th><th>Access</th><th>Reset</th><th>Description</th></tr>
+   <tr id="ad7771.user_cfg3.convst_deglitch_dis"><td>7:6</td><td>convst_deglitch_dis</td><td>RW</td><td>2</td><td>Disable deglitching of CONVST_SAR pin<table class="noborders">
+   <tr><td class="enum-name">2&nbsp;(DEGLITCH_1P5)</td><td width="*" class="enum-desc">Deglitch 1.5 MCLK</td></tr>
+   <tr><td class="enum-name">3&nbsp;(DISABLE)</td><td width="*" class="enum-desc">No deglitch circuit</td></tr>
+</table>
+</td></tr>
+   <tr id="ad7771.user_cfg3.spi_subordinate"><td>4</td><td>spi_subordinate</td><td>RW</td><td>0</td><td>Enable SPI subordinate to read-back ADC on SDO</td></tr>
+   <tr id="ad7771.user_cfg3.clk_qual_dis"><td>0</td><td>clk_qual_dis</td><td>RW</td><td>0</td><td>Disable clock qualifier check if user reqyire to use an MCLK < 256 kHz</td></tr>
+</table>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#regmap.ad7771">Page summary</a>
+<h3 id="ad7771.data_output">1.1.7 Data output format (data_output)</h3>
+<table class="noborders" id="reginsts.ad7771.data_output">
+   <tr><th class="noborders">Offset</th><th width="33%" class="noborders">Name</th><th class="noborders">Reset</th></tr>
+   <tr id="inst.ad7771.data_output"><td class="noborders">0x14</td><td class="noborders">data_output</td><td class="noborders">0x00</td></tr>
+</table>
+<table class="map" id="layout.ad7771.data_output">
+  <tr><td width="*" class="map"></td>
+<td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td></tr>
+   <tr><td class="map">Bit</td><td class="map" colspan="4">7</td><td class="map" colspan="4">6</td><td class="map" colspan="4">5</td><td class="map" colspan="4">4</td><td class="map" colspan="4">3</td><td class="map" colspan="4">2</td><td class="map" colspan="4">1</td><td class="map" colspan="4">0</td></tr>
+   <tr><td class="map">Field</td><td class="map" colspan="8">data_format</td><td class="mapv" colspan="4">header_format</td><td class="rsvd" colspan="4"></td><td class="map" colspan="12">dclk_div</td><td class="rsvd" colspan="4"></td></tr>
+   <tr><td class="map">Reset</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td></tr>
+</table>
+<table id="fields.ad7771.data_output">
+   <tr><th>Bits</th><th>Name</th><th>Access</th><th>Reset</th><th>Description</th></tr>
+   <tr id="ad7771.data_output.data_format"><td>7:6</td><td>data_format</td><td>RW</td><td>0</td><td>Data out format<table class="noborders">
+   <tr><td class="enum-name">0&nbsp;(QUAD)</td><td width="*" class="enum-desc">4 DOUT lines</td></tr>
+   <tr><td class="enum-name">1&nbsp;(DOUBLE)</td><td width="*" class="enum-desc">2 DOUT lines</td></tr>
+   <tr><td class="enum-name">2&nbsp;(SINGLE)</td><td width="*" class="enum-desc">1 DOUT lines</td></tr>
+</table>
+</td></tr>
+   <tr id="ad7771.data_output.header_format"><td>5</td><td>header_format</td><td>RW</td><td>0</td><td>Header format<table class="noborders">
+   <tr><td class="enum-name">0&nbsp;(STATUS)</td><td width="*" class="enum-desc">Status header</td></tr>
+   <tr><td class="enum-name">1&nbsp;(CRC)</td><td width="*" class="enum-desc">CRC header</td></tr>
+</table>
+</td></tr>
+   <tr id="ad7771.data_output.dclk_div"><td>3:1</td><td>dclk_div</td><td>RW</td><td>0</td><td>MCLK divider (power of 2)</td></tr>
+</table>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#regmap.ad7771">Page summary</a>
+<h3 id="ad7771.mux_ctrl_ref_mtr">1.1.8 ADC/Reference muc control (mux_ctrl_ref_mtr)</h3>
+<table class="noborders" id="reginsts.ad7771.mux_ctrl_ref_mtr">
+   <tr><th class="noborders">Offset</th><th width="33%" class="noborders">Name</th><th class="noborders">Reset</th></tr>
+   <tr id="inst.ad7771.mux_ctrl_ref_mtr"><td class="noborders">0x15</td><td class="noborders">mux_ctrl_ref_mtr</td><td class="noborders">0x00</td></tr>
+</table>
+<table class="map" id="layout.ad7771.mux_ctrl_ref_mtr">
+  <tr><td width="*" class="map"></td>
+<td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td></tr>
+   <tr><td class="map">Bit</td><td class="map" colspan="4">7</td><td class="map" colspan="4">6</td><td class="map" colspan="4">5</td><td class="map" colspan="4">4</td><td class="map" colspan="4">3</td><td class="map" colspan="4">2</td><td class="map" colspan="4">1</td><td class="map" colspan="4">0</td></tr>
+   <tr><td class="map">Field</td><td class="map" colspan="8">ref</td><td class="map" colspan="16">mtr</td><td class="rsvd" colspan="8"></td></tr>
+   <tr><td class="map">Reset</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td></tr>
+</table>
+<table id="fields.ad7771.mux_ctrl_ref_mtr">
+   <tr><th>Bits</th><th>Name</th><th>Access</th><th>Reset</th><th>Description</th></tr>
+   <tr id="ad7771.mux_ctrl_ref_mtr.ref"><td>7:6</td><td>ref</td><td>RW</td><td>0</td><td>SD ADC reference mux<table class="noborders">
+   <tr><td class="enum-name">0&nbsp;(EXT_PM)</td><td width="*" class="enum-desc">External reference REFx+/REFx−</td></tr>
+   <tr><td class="enum-name">1&nbsp;(INTERNAL)</td><td width="*" class="enum-desc">Internal reference</td></tr>
+   <tr><td class="enum-name">2&nbsp;(EXT_SUP)</td><td width="*" class="enum-desc">External supply AVDD1x/AVSSx</td></tr>
+   <tr><td class="enum-name">3&nbsp;(EXT_MP)</td><td width="*" class="enum-desc">External reference REFx-/REFx+</td></tr>
+</table>
+</td></tr>
+   <tr id="ad7771.mux_ctrl_ref_mtr.mtr"><td>5:2</td><td>mtr</td><td>RW</td><td>0</td><td>SD ADC Meter mux<table class="noborders">
+   <tr><td class="enum-name">0&nbsp;(FIXED_280)</td><td width="*" class="enum-desc">280mV</td></tr>
+   <tr><td class="enum-name">1&nbsp;(EXT_PM)</td><td width="*" class="enum-desc">External reference REFx+/REFx−</td></tr>
+   <tr><td class="enum-name">2&nbsp;(EXT_MP)</td><td width="*" class="enum-desc">External reference REFx-/REFx+</td></tr>
+   <tr><td class="enum-name">3&nbsp;(EXT_MM)</td><td width="*" class="enum-desc">External reference REFx-/REFx-</td></tr>
+   <tr><td class="enum-name">4&nbsp;(INT_PM)</td><td width="*" class="enum-desc">Internal reference +/-</td></tr>
+   <tr><td class="enum-name">5&nbsp;(INT_MP)</td><td width="*" class="enum-desc">Internal reference -/+</td></tr>
+   <tr><td class="enum-name">6&nbsp;(INT_MM)</td><td width="*" class="enum-desc">Internal reference -/-</td></tr>
+   <tr><td class="enum-name">7&nbsp;(EXT_PP)</td><td width="*" class="enum-desc">External reference REFx+/REFx+</td></tr>
+</table>
+</td></tr>
+</table>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#regmap.ad7771">Page summary</a>
+<h3 id="ad7771.mux_ctrl_global">1.1.9 ADC/Reference muc control (mux_ctrl_global)</h3>
+<table class="noborders" id="reginsts.ad7771.mux_ctrl_global">
+   <tr><th class="noborders">Offset</th><th width="33%" class="noborders">Name</th><th class="noborders">Reset</th></tr>
+   <tr id="inst.ad7771.mux_ctrl_global"><td class="noborders">0x16</td><td class="noborders">mux_ctrl_global</td><td class="noborders">0x00</td></tr>
+</table>
+<table class="map" id="layout.ad7771.mux_ctrl_global">
+  <tr><td width="*" class="map"></td>
+<td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td></tr>
+   <tr><td class="map">Bit</td><td class="map" colspan="4">7</td><td class="map" colspan="4">6</td><td class="map" colspan="4">5</td><td class="map" colspan="4">4</td><td class="map" colspan="4">3</td><td class="map" colspan="4">2</td><td class="map" colspan="4">1</td><td class="map" colspan="4">0</td></tr>
+   <tr><td class="map">Field</td><td class="map" colspan="20">global</td><td class="rsvd" colspan="12"></td></tr>
+   <tr><td class="map">Reset</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td></tr>
+</table>
+<table id="fields.ad7771.mux_ctrl_global">
+   <tr><th>Bits</th><th>Name</th><th>Access</th><th>Reset</th><th>Description</th></tr>
+   <tr id="ad7771.mux_ctrl_global.global"><td>7:3</td><td>global</td><td>RW</td><td>0</td><td>SD ADC reference mux<table class="noborders">
+   <tr><td class="enum-name">0&nbsp;(AUXAIN)</td><td width="*" class="enum-desc">AUXAIN+/AUXAIN−.</td></tr>
+   <tr><td class="enum-name">1&nbsp;(DVBE)</td><td width="*" class="enum-desc">DVBE/AVSSx.</td></tr>
+   <tr><td class="enum-name">2&nbsp;(REF1_PM)</td><td width="*" class="enum-desc">REF1+/REF1−.</td></tr>
+   <tr><td class="enum-name">3&nbsp;(REF2_PM)</td><td width="*" class="enum-desc">REF2+/REF2−.</td></tr>
+   <tr><td class="enum-name">4&nbsp;(REF_OUT)</td><td width="*" class="enum-desc">REF_OUT/AVSSx.</td></tr>
+   <tr><td class="enum-name">5&nbsp;(VCM)</td><td width="*" class="enum-desc">VCM/AVSSx.</td></tr>
+   <tr><td class="enum-name">6&nbsp;(AREG1CAP)</td><td width="*" class="enum-desc">AREG1CAP/AVSSx.</td></tr>
+   <tr><td class="enum-name">7&nbsp;(AREG2CAP)</td><td width="*" class="enum-desc">AREG2CAP/AVSSx.</td></tr>
+   <tr><td class="enum-name">8&nbsp;(DREGCAP)</td><td width="*" class="enum-desc">DREGCAP/DGND.</td></tr>
+   <tr><td class="enum-name">9&nbsp;(AVDD1A)</td><td width="*" class="enum-desc">AVDD1A/AVSSx.</td></tr>
+   <tr><td class="enum-name">10&nbsp;(AVDD1B)</td><td width="*" class="enum-desc">AVDD1B/AVSSx.</td></tr>
+   <tr><td class="enum-name">11&nbsp;(AVDD2A)</td><td width="*" class="enum-desc">AVDD2A/AVSSx.</td></tr>
+   <tr><td class="enum-name">12&nbsp;(AVDD2B)</td><td width="*" class="enum-desc">AVDD2B/AVSSx.</td></tr>
+   <tr><td class="enum-name">13&nbsp;(IOVDD)</td><td width="*" class="enum-desc">IOVDD/DGND.</td></tr>
+   <tr><td class="enum-name">14&nbsp;(AVDD4)</td><td width="*" class="enum-desc">AVDD4/AVSSx.</td></tr>
+   <tr><td class="enum-name">15&nbsp;(DGND_A)</td><td width="*" class="enum-desc">DGND/AVSS1A.</td></tr>
+   <tr><td class="enum-name">16&nbsp;(DGND_B)</td><td width="*" class="enum-desc">DGND/AVSS1B.</td></tr>
+   <tr><td class="enum-name">17&nbsp;(DGND_X)</td><td width="*" class="enum-desc">DGND/AVSSx.</td></tr>
+   <tr><td class="enum-name">18&nbsp;(AVDD4_X)</td><td width="*" class="enum-desc">AVDD4/AVSSx.</td></tr>
+   <tr><td class="enum-name">19&nbsp;(REF1_PX)</td><td width="*" class="enum-desc">REF1+/AVSSx.</td></tr>
+   <tr><td class="enum-name">20&nbsp;(REF2_PX)</td><td width="*" class="enum-desc">REF2+/AVSSx.</td></tr>
+   <tr><td class="enum-name">21&nbsp;(AVDD4_ATT)</td><td width="*" class="enum-desc">AVDD4/AVSSx. Attenuated.</td></tr>
+</table>
+</td></tr>
+</table>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#regmap.ad7771">Page summary</a>
+<h3 id="ad7771.gpio_cfg">1.1.10 GPIO configuration register (gpio_cfg)</h3>
+<table class="noborders" id="reginsts.ad7771.gpio_cfg">
+   <tr><th class="noborders">Offset</th><th width="33%" class="noborders">Name</th><th class="noborders">Reset</th></tr>
+   <tr id="inst.ad7771.gpio_cfg"><td class="noborders">0x17</td><td class="noborders">gpio_cfg</td><td class="noborders">0x00</td></tr>
+</table>
+<table class="map" id="layout.ad7771.gpio_cfg">
+  <tr><td width="*" class="map"></td>
+<td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td></tr>
+   <tr><td class="map">Bit</td><td class="map" colspan="4">7</td><td class="map" colspan="4">6</td><td class="map" colspan="4">5</td><td class="map" colspan="4">4</td><td class="map" colspan="4">3</td><td class="map" colspan="4">2</td><td class="map" colspan="4">1</td><td class="map" colspan="4">0</td></tr>
+   <tr><td class="map">Field</td><td class="rsvd" colspan="20"></td><td class="map" colspan="12">op_en</td></tr>
+   <tr><td class="map">Reset</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td></tr>
+</table>
+<table id="fields.ad7771.gpio_cfg">
+   <tr><th>Bits</th><th>Name</th><th>Access</th><th>Reset</th><th>Description</th></tr>
+   <tr id="ad7771.gpio_cfg.op_en"><td>2:0</td><td>op_en</td><td>RW</td><td>0</td><td>Input/Output</td></tr>
+</table>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#regmap.ad7771">Page summary</a>
+<h3 id="ad7771.gpio_data">1.1.11 GPIO configuration register (gpio_data)</h3>
+<table class="noborders" id="reginsts.ad7771.gpio_data">
+   <tr><th class="noborders">Offset</th><th width="33%" class="noborders">Name</th><th class="noborders">Reset</th></tr>
+   <tr id="inst.ad7771.gpio_data"><td class="noborders">0x18</td><td class="noborders">gpio_data</td><td class="noborders">0x00</td></tr>
+</table>
+<table class="map" id="layout.ad7771.gpio_data">
+  <tr><td width="*" class="map"></td>
+<td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td></tr>
+   <tr><td class="map">Bit</td><td class="map" colspan="4">7</td><td class="map" colspan="4">6</td><td class="map" colspan="4">5</td><td class="map" colspan="4">4</td><td class="map" colspan="4">3</td><td class="map" colspan="4">2</td><td class="map" colspan="4">1</td><td class="map" colspan="4">0</td></tr>
+   <tr><td class="map">Field</td><td class="rsvd" colspan="8"></td><td class="map" colspan="12">read</td><td class="map" colspan="12">write</td></tr>
+   <tr><td class="map">Reset</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td></tr>
+</table>
+<table id="fields.ad7771.gpio_data">
+   <tr><th>Bits</th><th>Name</th><th>Access</th><th>Reset</th><th>Description</th></tr>
+   <tr id="ad7771.gpio_data.read"><td>5:3</td><td>read</td><td>RO</td><td>0</td><td>Data read from the GPIO pins</td></tr>
+   <tr id="ad7771.gpio_data.write"><td>2:0</td><td>write</td><td>RW</td><td>0</td><td>Value sent to the GPIO pins</td></tr>
+</table>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#regmap.ad7771">Page summary</a>
+<h3 id="ad7771.buffer_cfg1">1.1.12 Buffer configuration 1 (buffer_cfg1)</h3>
+<table class="noborders" id="reginsts.ad7771.buffer_cfg1">
+   <tr><th class="noborders">Offset</th><th width="33%" class="noborders">Name</th><th class="noborders">Reset</th></tr>
+   <tr id="inst.ad7771.buffer_cfg1"><td class="noborders">0x19</td><td class="noborders">buffer_cfg1</td><td class="noborders">0x18</td></tr>
+</table>
+<table class="map" id="layout.ad7771.buffer_cfg1">
+  <tr><td width="*" class="map"></td>
+<td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td></tr>
+   <tr><td class="map">Bit</td><td class="map" colspan="4">7</td><td class="map" colspan="4">6</td><td class="map" colspan="4">5</td><td class="map" colspan="4">4</td><td class="map" colspan="4">3</td><td class="map" colspan="4">2</td><td class="map" colspan="4">1</td><td class="map" colspan="4">0</td></tr>
+   <tr><td class="map">Field</td><td class="rsvd" colspan="12"></td><td class="mapv" colspan="4">ref_buf_pos_en</td><td class="mapv" colspan="4">ref_buf_neg_en</td><td class="rsvd" colspan="12"></td></tr>
+   <tr><td class="map">Reset</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">1</td><td class="map" colspan="4">1</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td></tr>
+</table>
+<table id="fields.ad7771.buffer_cfg1">
+   <tr><th>Bits</th><th>Name</th><th>Access</th><th>Reset</th><th>Description</th></tr>
+   <tr id="ad7771.buffer_cfg1.ref_buf_pos_en"><td>4</td><td>ref_buf_pos_en</td><td>RW</td><td>1</td><td>Reference buffer positive enable</td></tr>
+   <tr id="ad7771.buffer_cfg1.ref_buf_neg_en"><td>3</td><td>ref_buf_neg_en</td><td>RW</td><td>1</td><td>Reference buffer negative enable</td></tr>
+</table>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#regmap.ad7771">Page summary</a>
+<h3 id="ad7771.buffer_cfg2">1.1.13 Buffer configuration (reference) (buffer_cfg2)</h3>
+<table class="noborders" id="reginsts.ad7771.buffer_cfg2">
+   <tr><th class="noborders">Offset</th><th width="33%" class="noborders">Name</th><th class="noborders">Reset</th></tr>
+   <tr id="inst.ad7771.buffer_cfg2"><td class="noborders">0x1A</td><td class="noborders">buffer_cfg2</td><td class="noborders">0xC7</td></tr>
+</table>
+<table class="map" id="layout.ad7771.buffer_cfg2">
+  <tr><td width="*" class="map"></td>
+<td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td></tr>
+   <tr><td class="map">Bit</td><td class="map" colspan="4">7</td><td class="map" colspan="4">6</td><td class="map" colspan="4">5</td><td class="map" colspan="4">4</td><td class="map" colspan="4">3</td><td class="map" colspan="4">2</td><td class="map" colspan="4">1</td><td class="map" colspan="4">0</td></tr>
+   <tr><td class="map">Field</td><td class="mapv" colspan="4">ref_buf_pos_preq</td><td class="mapv" colspan="4">ref_buf_neg_preq</td><td class="rsvd" colspan="12"></td><td class="mapv" colspan="4">pdb_aldo1_ovrdrv</td><td class="mapv" colspan="4">pdb_aldo2_ovrdrv</td><td class="mapv" colspan="4">pdb_dldo_ovrdrv</td></tr>
+   <tr><td class="map">Reset</td><td class="map" colspan="4">1</td><td class="map" colspan="4">1</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">1</td><td class="map" colspan="4">1</td><td class="map" colspan="4">1</td></tr>
+</table>
+<table id="fields.ad7771.buffer_cfg2">
+   <tr><th>Bits</th><th>Name</th><th>Access</th><th>Reset</th><th>Description</th></tr>
+   <tr id="ad7771.buffer_cfg2.ref_buf_pos_preq"><td>7</td><td>ref_buf_pos_preq</td><td>RW</td><td>1</td><td>Reference Buffer Positive Precharge Enable</td></tr>
+   <tr id="ad7771.buffer_cfg2.ref_buf_neg_preq"><td>6</td><td>ref_buf_neg_preq</td><td>RW</td><td>1</td><td>Reference Buffer Negative Precharge Enable</td></tr>
+   <tr id="ad7771.buffer_cfg2.pdb_aldo1_ovrdrv"><td>2</td><td>pdb_aldo1_ovrdrv</td><td>RW</td><td>1</td><td>AREG1CAP Overdrive Enable</td></tr>
+   <tr id="ad7771.buffer_cfg2.pdb_aldo2_ovrdrv"><td>1</td><td>pdb_aldo2_ovrdrv</td><td>RW</td><td>1</td><td>AREG2CAP Overdrive Enable</td></tr>
+   <tr id="ad7771.buffer_cfg2.pdb_dldo_ovrdrv"><td>0</td><td>pdb_dldo_ovrdrv</td><td>RW</td><td>1</td><td>DREGCAP Overdrive Enable</td></tr>
+</table>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#regmap.ad7771">Page summary</a>
+<h3 id="ad7771.channel_offset_up">1.1.14 Channel  offset (upper byte) (channel_offset_up)</h3>
+<table class="noborders" id="reginsts.ad7771.channel_offset_up">
+   <tr><th class="noborders">Offset</th><th width="33%" class="noborders">Name</th><th class="noborders">Reset</th><th class="noborders">Description</th></tr>
+   <tr id="inst.ad7771.channel_offset_up[0]"><td class="noborders">0x1B</td><td class="noborders">channel_offset_up[0]</td><td class="noborders">0x00</td><td class="noborders">Channel 0 offset (upper byte)</td></tr>
+   <tr id="inst.ad7771.channel_offset_up[1]"><td class="noborders">0x1C</td><td class="noborders">channel_offset_up[1]</td><td class="noborders">0x00</td><td class="noborders">Channel 1 offset (upper byte)</td></tr>
+   <tr id="inst.ad7771.channel_offset_up[2]"><td class="noborders">0x1D</td><td class="noborders">channel_offset_up[2]</td><td class="noborders">0x00</td><td class="noborders">Channel 2 offset (upper byte)</td></tr>
+   <tr id="inst.ad7771.channel_offset_up[3]"><td class="noborders">0x1E</td><td class="noborders">channel_offset_up[3]</td><td class="noborders">0x00</td><td class="noborders">Channel 3 offset (upper byte)</td></tr>
+   <tr id="inst.ad7771.channel_offset_up[4]"><td class="noborders">0x1F</td><td class="noborders">channel_offset_up[4]</td><td class="noborders">0x00</td><td class="noborders">Channel 4 offset (upper byte)</td></tr>
+   <tr id="inst.ad7771.channel_offset_up[5]"><td class="noborders">0x20</td><td class="noborders">channel_offset_up[5]</td><td class="noborders">0x00</td><td class="noborders">Channel 5 offset (upper byte)</td></tr>
+   <tr id="inst.ad7771.channel_offset_up[6]"><td class="noborders">0x21</td><td class="noborders">channel_offset_up[6]</td><td class="noborders">0x00</td><td class="noborders">Channel 6 offset (upper byte)</td></tr>
+   <tr id="inst.ad7771.channel_offset_up[7]"><td class="noborders">0x22</td><td class="noborders">channel_offset_up[7]</td><td class="noborders">0x00</td><td class="noborders">Channel 7 offset (upper byte)</td></tr>
+</table>
+<table class="map" id="layout.ad7771.channel_offset_up">
+  <tr><td width="*" class="map"></td>
+<td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td></tr>
+   <tr><td class="map">Bit</td><td class="map" colspan="4">7</td><td class="map" colspan="4">6</td><td class="map" colspan="4">5</td><td class="map" colspan="4">4</td><td class="map" colspan="4">3</td><td class="map" colspan="4">2</td><td class="map" colspan="4">1</td><td class="map" colspan="4">0</td></tr>
+   <tr><td class="map">Field</td><td class="map" colspan="32">offset</td></tr>
+   <tr><td class="map">Reset</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td></tr>
+</table>
+<table id="fields.ad7771.channel_offset_up">
+   <tr><th>Bits</th><th>Name</th><th>Access</th><th>Reset</th><th>Description</th></tr>
+   <tr id="ad7771.channel_offset_up.offset"><td>7:0</td><td>offset</td><td>RW</td><td>0</td><td>Offset (bit 23:16)</td></tr>
+</table>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#regmap.ad7771">Page summary</a>
+<h3 id="ad7771.channel_offset_mid">1.1.15 Channel  offset (middle byte) (channel_offset_mid)</h3>
+<table class="noborders" id="reginsts.ad7771.channel_offset_mid">
+   <tr><th class="noborders">Offset</th><th width="33%" class="noborders">Name</th><th class="noborders">Reset</th><th class="noborders">Description</th></tr>
+   <tr id="inst.ad7771.channel_offset_mid[0]"><td class="noborders">0x23</td><td class="noborders">channel_offset_mid[0]</td><td class="noborders">0x00</td><td class="noborders">Channel 0 offset (middle byte)</td></tr>
+   <tr id="inst.ad7771.channel_offset_mid[1]"><td class="noborders">0x24</td><td class="noborders">channel_offset_mid[1]</td><td class="noborders">0x00</td><td class="noborders">Channel 1 offset (middle byte)</td></tr>
+   <tr id="inst.ad7771.channel_offset_mid[2]"><td class="noborders">0x25</td><td class="noborders">channel_offset_mid[2]</td><td class="noborders">0x00</td><td class="noborders">Channel 2 offset (middle byte)</td></tr>
+   <tr id="inst.ad7771.channel_offset_mid[3]"><td class="noborders">0x26</td><td class="noborders">channel_offset_mid[3]</td><td class="noborders">0x00</td><td class="noborders">Channel 3 offset (middle byte)</td></tr>
+   <tr id="inst.ad7771.channel_offset_mid[4]"><td class="noborders">0x27</td><td class="noborders">channel_offset_mid[4]</td><td class="noborders">0x00</td><td class="noborders">Channel 4 offset (middle byte)</td></tr>
+   <tr id="inst.ad7771.channel_offset_mid[5]"><td class="noborders">0x28</td><td class="noborders">channel_offset_mid[5]</td><td class="noborders">0x00</td><td class="noborders">Channel 5 offset (middle byte)</td></tr>
+   <tr id="inst.ad7771.channel_offset_mid[6]"><td class="noborders">0x29</td><td class="noborders">channel_offset_mid[6]</td><td class="noborders">0x00</td><td class="noborders">Channel 6 offset (middle byte)</td></tr>
+   <tr id="inst.ad7771.channel_offset_mid[7]"><td class="noborders">0x2A</td><td class="noborders">channel_offset_mid[7]</td><td class="noborders">0x00</td><td class="noborders">Channel 7 offset (middle byte)</td></tr>
+</table>
+<table class="map" id="layout.ad7771.channel_offset_mid">
+  <tr><td width="*" class="map"></td>
+<td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td></tr>
+   <tr><td class="map">Bit</td><td class="map" colspan="4">7</td><td class="map" colspan="4">6</td><td class="map" colspan="4">5</td><td class="map" colspan="4">4</td><td class="map" colspan="4">3</td><td class="map" colspan="4">2</td><td class="map" colspan="4">1</td><td class="map" colspan="4">0</td></tr>
+   <tr><td class="map">Field</td><td class="map" colspan="32">offset</td></tr>
+   <tr><td class="map">Reset</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td></tr>
+</table>
+<table id="fields.ad7771.channel_offset_mid">
+   <tr><th>Bits</th><th>Name</th><th>Access</th><th>Reset</th><th>Description</th></tr>
+   <tr id="ad7771.channel_offset_mid.offset"><td>7:0</td><td>offset</td><td>RW</td><td>0</td><td>Offset (bit 15:8)</td></tr>
+</table>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#regmap.ad7771">Page summary</a>
+<h3 id="ad7771.channel_offset_low">1.1.16 Channel  offset (lower byte) (channel_offset_low)</h3>
+<table class="noborders" id="reginsts.ad7771.channel_offset_low">
+   <tr><th class="noborders">Offset</th><th width="33%" class="noborders">Name</th><th class="noborders">Reset</th><th class="noborders">Description</th></tr>
+   <tr id="inst.ad7771.channel_offset_low[0]"><td class="noborders">0x2B</td><td class="noborders">channel_offset_low[0]</td><td class="noborders">0x00</td><td class="noborders">Channel 0 offset (lower byte)</td></tr>
+   <tr id="inst.ad7771.channel_offset_low[1]"><td class="noborders">0x2C</td><td class="noborders">channel_offset_low[1]</td><td class="noborders">0x00</td><td class="noborders">Channel 1 offset (lower byte)</td></tr>
+   <tr id="inst.ad7771.channel_offset_low[2]"><td class="noborders">0x2D</td><td class="noborders">channel_offset_low[2]</td><td class="noborders">0x00</td><td class="noborders">Channel 2 offset (lower byte)</td></tr>
+   <tr id="inst.ad7771.channel_offset_low[3]"><td class="noborders">0x2E</td><td class="noborders">channel_offset_low[3]</td><td class="noborders">0x00</td><td class="noborders">Channel 3 offset (lower byte)</td></tr>
+   <tr id="inst.ad7771.channel_offset_low[4]"><td class="noborders">0x2F</td><td class="noborders">channel_offset_low[4]</td><td class="noborders">0x00</td><td class="noborders">Channel 4 offset (lower byte)</td></tr>
+   <tr id="inst.ad7771.channel_offset_low[5]"><td class="noborders">0x30</td><td class="noborders">channel_offset_low[5]</td><td class="noborders">0x00</td><td class="noborders">Channel 5 offset (lower byte)</td></tr>
+   <tr id="inst.ad7771.channel_offset_low[6]"><td class="noborders">0x31</td><td class="noborders">channel_offset_low[6]</td><td class="noborders">0x00</td><td class="noborders">Channel 6 offset (lower byte)</td></tr>
+   <tr id="inst.ad7771.channel_offset_low[7]"><td class="noborders">0x32</td><td class="noborders">channel_offset_low[7]</td><td class="noborders">0x00</td><td class="noborders">Channel 7 offset (lower byte)</td></tr>
+</table>
+<table class="map" id="layout.ad7771.channel_offset_low">
+  <tr><td width="*" class="map"></td>
+<td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td></tr>
+   <tr><td class="map">Bit</td><td class="map" colspan="4">7</td><td class="map" colspan="4">6</td><td class="map" colspan="4">5</td><td class="map" colspan="4">4</td><td class="map" colspan="4">3</td><td class="map" colspan="4">2</td><td class="map" colspan="4">1</td><td class="map" colspan="4">0</td></tr>
+   <tr><td class="map">Field</td><td class="map" colspan="32">offset</td></tr>
+   <tr><td class="map">Reset</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td></tr>
+</table>
+<table id="fields.ad7771.channel_offset_low">
+   <tr><th>Bits</th><th>Name</th><th>Access</th><th>Reset</th><th>Description</th></tr>
+   <tr id="ad7771.channel_offset_low.offset"><td>7:0</td><td>offset</td><td>RW</td><td>0</td><td>Offset (bit 7:0)</td></tr>
+</table>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#regmap.ad7771">Page summary</a>
+<h3 id="ad7771.channel_gain_up">1.1.17 Channel  gain (upper byte) (channel_gain_up)</h3>
+<table class="noborders" id="reginsts.ad7771.channel_gain_up">
+   <tr><th class="noborders">Offset</th><th width="33%" class="noborders">Name</th><th class="noborders">Reset</th><th class="noborders">Description</th></tr>
+   <tr id="inst.ad7771.channel_gain_up[0]"><td class="noborders">0x33</td><td class="noborders">channel_gain_up[0]</td><td class="noborders">0x00</td><td class="noborders">Channel 0 gain (upper byte)</td></tr>
+   <tr id="inst.ad7771.channel_gain_up[1]"><td class="noborders">0x34</td><td class="noborders">channel_gain_up[1]</td><td class="noborders">0x00</td><td class="noborders">Channel 1 gain (upper byte)</td></tr>
+   <tr id="inst.ad7771.channel_gain_up[2]"><td class="noborders">0x35</td><td class="noborders">channel_gain_up[2]</td><td class="noborders">0x00</td><td class="noborders">Channel 2 gain (upper byte)</td></tr>
+   <tr id="inst.ad7771.channel_gain_up[3]"><td class="noborders">0x36</td><td class="noborders">channel_gain_up[3]</td><td class="noborders">0x00</td><td class="noborders">Channel 3 gain (upper byte)</td></tr>
+   <tr id="inst.ad7771.channel_gain_up[4]"><td class="noborders">0x37</td><td class="noborders">channel_gain_up[4]</td><td class="noborders">0x00</td><td class="noborders">Channel 4 gain (upper byte)</td></tr>
+   <tr id="inst.ad7771.channel_gain_up[5]"><td class="noborders">0x38</td><td class="noborders">channel_gain_up[5]</td><td class="noborders">0x00</td><td class="noborders">Channel 5 gain (upper byte)</td></tr>
+   <tr id="inst.ad7771.channel_gain_up[6]"><td class="noborders">0x39</td><td class="noborders">channel_gain_up[6]</td><td class="noborders">0x00</td><td class="noborders">Channel 6 gain (upper byte)</td></tr>
+   <tr id="inst.ad7771.channel_gain_up[7]"><td class="noborders">0x3A</td><td class="noborders">channel_gain_up[7]</td><td class="noborders">0x00</td><td class="noborders">Channel 7 gain (upper byte)</td></tr>
+</table>
+<table class="map" id="layout.ad7771.channel_gain_up">
+  <tr><td width="*" class="map"></td>
+<td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td></tr>
+   <tr><td class="map">Bit</td><td class="map" colspan="4">7</td><td class="map" colspan="4">6</td><td class="map" colspan="4">5</td><td class="map" colspan="4">4</td><td class="map" colspan="4">3</td><td class="map" colspan="4">2</td><td class="map" colspan="4">1</td><td class="map" colspan="4">0</td></tr>
+   <tr><td class="map">Field</td><td class="map" colspan="32">gain</td></tr>
+   <tr><td class="map">Reset</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td></tr>
+</table>
+<table id="fields.ad7771.channel_gain_up">
+   <tr><th>Bits</th><th>Name</th><th>Access</th><th>Reset</th><th>Description</th></tr>
+   <tr id="ad7771.channel_gain_up.gain"><td>7:0</td><td>gain</td><td>RW</td><td>0</td><td>Gain (bit 23:16)</td></tr>
+</table>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#regmap.ad7771">Page summary</a>
+<h3 id="ad7771.channel_gain_mid">1.1.18 Channel  gain (middle byte) (channel_gain_mid)</h3>
+<table class="noborders" id="reginsts.ad7771.channel_gain_mid">
+   <tr><th class="noborders">Offset</th><th width="33%" class="noborders">Name</th><th class="noborders">Reset</th><th class="noborders">Description</th></tr>
+   <tr id="inst.ad7771.channel_gain_mid[0]"><td class="noborders">0x3B</td><td class="noborders">channel_gain_mid[0]</td><td class="noborders">0x00</td><td class="noborders">Channel 0 gain (middle byte)</td></tr>
+   <tr id="inst.ad7771.channel_gain_mid[1]"><td class="noborders">0x3C</td><td class="noborders">channel_gain_mid[1]</td><td class="noborders">0x00</td><td class="noborders">Channel 1 gain (middle byte)</td></tr>
+   <tr id="inst.ad7771.channel_gain_mid[2]"><td class="noborders">0x3D</td><td class="noborders">channel_gain_mid[2]</td><td class="noborders">0x00</td><td class="noborders">Channel 2 gain (middle byte)</td></tr>
+   <tr id="inst.ad7771.channel_gain_mid[3]"><td class="noborders">0x3E</td><td class="noborders">channel_gain_mid[3]</td><td class="noborders">0x00</td><td class="noborders">Channel 3 gain (middle byte)</td></tr>
+   <tr id="inst.ad7771.channel_gain_mid[4]"><td class="noborders">0x3F</td><td class="noborders">channel_gain_mid[4]</td><td class="noborders">0x00</td><td class="noborders">Channel 4 gain (middle byte)</td></tr>
+   <tr id="inst.ad7771.channel_gain_mid[5]"><td class="noborders">0x40</td><td class="noborders">channel_gain_mid[5]</td><td class="noborders">0x00</td><td class="noborders">Channel 5 gain (middle byte)</td></tr>
+   <tr id="inst.ad7771.channel_gain_mid[6]"><td class="noborders">0x41</td><td class="noborders">channel_gain_mid[6]</td><td class="noborders">0x00</td><td class="noborders">Channel 6 gain (middle byte)</td></tr>
+   <tr id="inst.ad7771.channel_gain_mid[7]"><td class="noborders">0x42</td><td class="noborders">channel_gain_mid[7]</td><td class="noborders">0x00</td><td class="noborders">Channel 7 gain (middle byte)</td></tr>
+</table>
+<table class="map" id="layout.ad7771.channel_gain_mid">
+  <tr><td width="*" class="map"></td>
+<td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td></tr>
+   <tr><td class="map">Bit</td><td class="map" colspan="4">7</td><td class="map" colspan="4">6</td><td class="map" colspan="4">5</td><td class="map" colspan="4">4</td><td class="map" colspan="4">3</td><td class="map" colspan="4">2</td><td class="map" colspan="4">1</td><td class="map" colspan="4">0</td></tr>
+   <tr><td class="map">Field</td><td class="map" colspan="32">gain</td></tr>
+   <tr><td class="map">Reset</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td></tr>
+</table>
+<table id="fields.ad7771.channel_gain_mid">
+   <tr><th>Bits</th><th>Name</th><th>Access</th><th>Reset</th><th>Description</th></tr>
+   <tr id="ad7771.channel_gain_mid.gain"><td>7:0</td><td>gain</td><td>RW</td><td>0</td><td>Gain (bit 15:8)</td></tr>
+</table>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#regmap.ad7771">Page summary</a>
+<h3 id="ad7771.channel_gain_low">1.1.19 Channel  gain (lower byte) (channel_gain_low)</h3>
+<table class="noborders" id="reginsts.ad7771.channel_gain_low">
+   <tr><th class="noborders">Offset</th><th width="33%" class="noborders">Name</th><th class="noborders">Reset</th><th class="noborders">Description</th></tr>
+   <tr id="inst.ad7771.channel_gain_low[0]"><td class="noborders">0x43</td><td class="noborders">channel_gain_low[0]</td><td class="noborders">0x00</td><td class="noborders">Channel 0 gain (lower byte)</td></tr>
+   <tr id="inst.ad7771.channel_gain_low[1]"><td class="noborders">0x44</td><td class="noborders">channel_gain_low[1]</td><td class="noborders">0x00</td><td class="noborders">Channel 1 gain (lower byte)</td></tr>
+   <tr id="inst.ad7771.channel_gain_low[2]"><td class="noborders">0x45</td><td class="noborders">channel_gain_low[2]</td><td class="noborders">0x00</td><td class="noborders">Channel 2 gain (lower byte)</td></tr>
+   <tr id="inst.ad7771.channel_gain_low[3]"><td class="noborders">0x46</td><td class="noborders">channel_gain_low[3]</td><td class="noborders">0x00</td><td class="noborders">Channel 3 gain (lower byte)</td></tr>
+   <tr id="inst.ad7771.channel_gain_low[4]"><td class="noborders">0x47</td><td class="noborders">channel_gain_low[4]</td><td class="noborders">0x00</td><td class="noborders">Channel 4 gain (lower byte)</td></tr>
+   <tr id="inst.ad7771.channel_gain_low[5]"><td class="noborders">0x48</td><td class="noborders">channel_gain_low[5]</td><td class="noborders">0x00</td><td class="noborders">Channel 5 gain (lower byte)</td></tr>
+   <tr id="inst.ad7771.channel_gain_low[6]"><td class="noborders">0x49</td><td class="noborders">channel_gain_low[6]</td><td class="noborders">0x00</td><td class="noborders">Channel 6 gain (lower byte)</td></tr>
+   <tr id="inst.ad7771.channel_gain_low[7]"><td class="noborders">0x4A</td><td class="noborders">channel_gain_low[7]</td><td class="noborders">0x00</td><td class="noborders">Channel 7 gain (lower byte)</td></tr>
+</table>
+<table class="map" id="layout.ad7771.channel_gain_low">
+  <tr><td width="*" class="map"></td>
+<td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td></tr>
+   <tr><td class="map">Bit</td><td class="map" colspan="4">7</td><td class="map" colspan="4">6</td><td class="map" colspan="4">5</td><td class="map" colspan="4">4</td><td class="map" colspan="4">3</td><td class="map" colspan="4">2</td><td class="map" colspan="4">1</td><td class="map" colspan="4">0</td></tr>
+   <tr><td class="map">Field</td><td class="map" colspan="32">gain</td></tr>
+   <tr><td class="map">Reset</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td></tr>
+</table>
+<table id="fields.ad7771.channel_gain_low">
+   <tr><th>Bits</th><th>Name</th><th>Access</th><th>Reset</th><th>Description</th></tr>
+   <tr id="ad7771.channel_gain_low.gain"><td>7:0</td><td>gain</td><td>RW</td><td>0</td><td>Gain (bit 7:0)</td></tr>
+</table>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#regmap.ad7771">Page summary</a>
+<h3 id="ad7771.channel_status">1.1.20 Channel  status (channel_status)</h3>
+<table class="noborders" id="reginsts.ad7771.channel_status">
+   <tr><th class="noborders">Offset</th><th width="33%" class="noborders">Name</th><th class="noborders">Reset</th><th class="noborders">Description</th></tr>
+   <tr id="inst.ad7771.channel_status[0]"><td class="noborders">0x4B</td><td class="noborders">channel_status[0]</td><td class="noborders">0x00</td><td class="noborders">Channel 0 status</td></tr>
+   <tr id="inst.ad7771.channel_status[1]"><td class="noborders">0x4C</td><td class="noborders">channel_status[1]</td><td class="noborders">0x00</td><td class="noborders">Channel 1 status</td></tr>
+   <tr id="inst.ad7771.channel_status[2]"><td class="noborders">0x4D</td><td class="noborders">channel_status[2]</td><td class="noborders">0x00</td><td class="noborders">Channel 2 status</td></tr>
+   <tr id="inst.ad7771.channel_status[3]"><td class="noborders">0x4E</td><td class="noborders">channel_status[3]</td><td class="noborders">0x00</td><td class="noborders">Channel 3 status</td></tr>
+   <tr id="inst.ad7771.channel_status[4]"><td class="noborders">0x4F</td><td class="noborders">channel_status[4]</td><td class="noborders">0x00</td><td class="noborders">Channel 4 status</td></tr>
+   <tr id="inst.ad7771.channel_status[5]"><td class="noborders">0x50</td><td class="noborders">channel_status[5]</td><td class="noborders">0x00</td><td class="noborders">Channel 5 status</td></tr>
+   <tr id="inst.ad7771.channel_status[6]"><td class="noborders">0x51</td><td class="noborders">channel_status[6]</td><td class="noborders">0x00</td><td class="noborders">Channel 6 status</td></tr>
+   <tr id="inst.ad7771.channel_status[7]"><td class="noborders">0x52</td><td class="noborders">channel_status[7]</td><td class="noborders">0x00</td><td class="noborders">Channel 7 status</td></tr>
+</table>
+<table class="map" id="layout.ad7771.channel_status">
+  <tr><td width="*" class="map"></td>
+<td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td></tr>
+   <tr><td class="map">Bit</td><td class="map" colspan="4">7</td><td class="map" colspan="4">6</td><td class="map" colspan="4">5</td><td class="map" colspan="4">4</td><td class="map" colspan="4">3</td><td class="map" colspan="4">2</td><td class="map" colspan="4">1</td><td class="map" colspan="4">0</td></tr>
+   <tr><td class="map">Field</td><td class="rsvd" colspan="12"></td><td class="map" colspan="4">err_ainm_uv</td><td class="map" colspan="4">err_ainm_ov</td><td class="map" colspan="4">err_ainp_uv</td><td class="map" colspan="4">err_ainp_ov</td><td class="map" colspan="4">err_ref_det</td></tr>
+   <tr><td class="map">Reset</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td></tr>
+</table>
+<table id="fields.ad7771.channel_status">
+   <tr><th>Bits</th><th>Name</th><th>Access</th><th>Reset</th><th>Description</th></tr>
+   <tr id="ad7771.channel_status.err_ainm_uv"><td>4</td><td>err_ainm_uv</td><td>RO</td><td>0</td><td>Channel 0 — AIN0− Undervoltage Error</td></tr>
+   <tr id="ad7771.channel_status.err_ainm_ov"><td>3</td><td>err_ainm_ov</td><td>RO</td><td>0</td><td>Channel 0 — AIN0− Overvoltage Error</td></tr>
+   <tr id="ad7771.channel_status.err_ainp_uv"><td>2</td><td>err_ainp_uv</td><td>RO</td><td>0</td><td>Channel 0 — AIN0+ Undervoltage Error</td></tr>
+   <tr id="ad7771.channel_status.err_ainp_ov"><td>1</td><td>err_ainp_ov</td><td>RO</td><td>0</td><td>Channel 0 — AIN0+ Overvoltage Error</td></tr>
+   <tr id="ad7771.channel_status.err_ref_det"><td>0</td><td>err_ref_det</td><td>RO</td><td>0</td><td>Channel 0 — Reference Detect Error</td></tr>
+</table>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#regmap.ad7771">Page summary</a>
+<h3 id="ad7771.channel_dsp_err">1.1.21 Channel (2*i)/(2*i+1) DSP errors (channel_dsp_err)</h3>
+<table class="noborders" id="reginsts.ad7771.channel_dsp_err">
+   <tr><th class="noborders">Offset</th><th width="33%" class="noborders">Name</th><th class="noborders">Reset</th><th class="noborders">Description</th></tr>
+   <tr id="inst.ad7771.channel_dsp_err[0]"><td class="noborders">0x53</td><td class="noborders">channel_dsp_err[0]</td><td class="noborders">0x00</td><td class="noborders">Channel 0/1 DSP errors</td></tr>
+   <tr id="inst.ad7771.channel_dsp_err[1]"><td class="noborders">0x54</td><td class="noborders">channel_dsp_err[1]</td><td class="noborders">0x00</td><td class="noborders">Channel 2/3 DSP errors</td></tr>
+   <tr id="inst.ad7771.channel_dsp_err[2]"><td class="noborders">0x55</td><td class="noborders">channel_dsp_err[2]</td><td class="noborders">0x00</td><td class="noborders">Channel 4/5 DSP errors</td></tr>
+   <tr id="inst.ad7771.channel_dsp_err[3]"><td class="noborders">0x56</td><td class="noborders">channel_dsp_err[3]</td><td class="noborders">0x00</td><td class="noborders">Channel 6/7 DSP errors</td></tr>
+</table>
+<table class="map" id="layout.ad7771.channel_dsp_err">
+  <tr><td width="*" class="map"></td>
+<td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td></tr>
+   <tr><td class="map">Bit</td><td class="map" colspan="4">7</td><td class="map" colspan="4">6</td><td class="map" colspan="4">5</td><td class="map" colspan="4">4</td><td class="map" colspan="4">3</td><td class="map" colspan="4">2</td><td class="map" colspan="4">1</td><td class="map" colspan="4">0</td></tr>
+   <tr><td class="map">Field</td><td class="rsvd" colspan="8"></td><td class="mapv" colspan="4">err_mod_sat1</td><td class="mapv" colspan="4">err_filter_sat1</td><td class="mapv" colspan="4">err_output_sat1</td><td class="mapv" colspan="4">err_mod_sat0</td><td class="mapv" colspan="4">err_filter_sat0</td><td class="mapv" colspan="4">err_output_sat0</td></tr>
+   <tr><td class="map">Reset</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td></tr>
+</table>
+<table id="fields.ad7771.channel_dsp_err">
+   <tr><th>Bits</th><th>Name</th><th>Access</th><th>Reset</th><th>Description</th></tr>
+   <tr id="ad7771.channel_dsp_err.err_mod_sat1"><td>5</td><td>err_mod_sat1</td><td>RO</td><td>0</td><td>Channel 1 — Modulator Output Saturation Error</td></tr>
+   <tr id="ad7771.channel_dsp_err.err_filter_sat1"><td>4</td><td>err_filter_sat1</td><td>RO</td><td>0</td><td>Channel 1 — Filter result has exceeded a reasonable level, before offset and gain calibration has been applied</td></tr>
+   <tr id="ad7771.channel_dsp_err.err_output_sat1"><td>3</td><td>err_output_sat1</td><td>RO</td><td>0</td><td>Channel 1 — ADC conversion has exceeded limits and has been clamped</td></tr>
+   <tr id="ad7771.channel_dsp_err.err_mod_sat0"><td>2</td><td>err_mod_sat0</td><td>RO</td><td>0</td><td>Channel 0 — Modulator Output Saturation Error</td></tr>
+   <tr id="ad7771.channel_dsp_err.err_filter_sat0"><td>1</td><td>err_filter_sat0</td><td>RO</td><td>0</td><td>Channel 0 — Filter result has exceeded a reasonable level, before offset and gain calibration has been applied</td></tr>
+   <tr id="ad7771.channel_dsp_err.err_output_sat0"><td>0</td><td>err_output_sat0</td><td>RO</td><td>0</td><td>Channel 0 — ADC conversion has exceeded limits and has been clamped</td></tr>
+</table>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#regmap.ad7771">Page summary</a>
+<h3 id="ad7771.channel_test_en">1.1.22 Channel 0 to 7 test enable (channel_test_en)</h3>
+<table class="noborders" id="reginsts.ad7771.channel_test_en">
+   <tr><th class="noborders">Offset</th><th width="33%" class="noborders">Name</th><th class="noborders">Reset</th></tr>
+   <tr id="inst.ad7771.channel_test_en"><td class="noborders">0x57</td><td class="noborders">channel_test_en</td><td class="noborders">0xFE</td></tr>
+</table>
+<table class="map" id="layout.ad7771.channel_test_en">
+  <tr><td width="*" class="map"></td>
+<td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td></tr>
+   <tr><td class="map">Bit</td><td class="map" colspan="4">7</td><td class="map" colspan="4">6</td><td class="map" colspan="4">5</td><td class="map" colspan="4">4</td><td class="map" colspan="4">3</td><td class="map" colspan="4">2</td><td class="map" colspan="4">1</td><td class="map" colspan="4">0</td></tr>
+   <tr><td class="map">Field</td><td class="mapv" colspan="4">output_sat_test_en</td><td class="mapv" colspan="4">filter_sat_test_en</td><td class="mapv" colspan="4">mod_sat_test_en</td><td class="mapv" colspan="4">ainm_uv_test_en</td><td class="mapv" colspan="4">ainm_ov_test_en</td><td class="mapv" colspan="4">ainp_uv_test_en</td><td class="mapv" colspan="4">ainp_ov_test_en</td><td class="mapv" colspan="4">ref_det_test_en</td></tr>
+   <tr><td class="map">Reset</td><td class="map" colspan="4">1</td><td class="map" colspan="4">1</td><td class="map" colspan="4">1</td><td class="map" colspan="4">1</td><td class="map" colspan="4">1</td><td class="map" colspan="4">1</td><td class="map" colspan="4">1</td><td class="map" colspan="4">0</td></tr>
+</table>
+<table id="fields.ad7771.channel_test_en">
+   <tr><th>Bits</th><th>Name</th><th>Access</th><th>Reset</th><th>Description</th></tr>
+   <tr id="ad7771.channel_test_en.output_sat_test_en"><td>7</td><td>output_sat_test_en</td><td>RW</td><td>1</td><td>ADC Conversion Error Test Enable</td></tr>
+   <tr id="ad7771.channel_test_en.filter_sat_test_en"><td>6</td><td>filter_sat_test_en</td><td>RW</td><td>1</td><td>Filter Saturation Test Enable</td></tr>
+   <tr id="ad7771.channel_test_en.mod_sat_test_en"><td>5</td><td>mod_sat_test_en</td><td>RW</td><td>1</td><td>Enable Error Flag for Modulator Saturation</td></tr>
+   <tr id="ad7771.channel_test_en.ainm_uv_test_en"><td>4</td><td>ainm_uv_test_en</td><td>RW</td><td>1</td><td>AINx− Undervoltage Test Enable</td></tr>
+   <tr id="ad7771.channel_test_en.ainm_ov_test_en"><td>3</td><td>ainm_ov_test_en</td><td>RW</td><td>1</td><td>AINx− Overvoltage Test Enable</td></tr>
+   <tr id="ad7771.channel_test_en.ainp_uv_test_en"><td>2</td><td>ainp_uv_test_en</td><td>RW</td><td>1</td><td>AINx+ Undervoltage Test Enable</td></tr>
+   <tr id="ad7771.channel_test_en.ainp_ov_test_en"><td>1</td><td>ainp_ov_test_en</td><td>RW</td><td>1</td><td>AINx+ Overvoltage Test Enable</td></tr>
+   <tr id="ad7771.channel_test_en.ref_det_test_en"><td>0</td><td>ref_det_test_en</td><td>RW</td><td>0</td><td>Reference Detect Test Enable</td></tr>
+</table>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#regmap.ad7771">Page summary</a>
+<h3 id="ad7771.general_err1">1.1.23 General Error 1 (general_err1)</h3>
+<table class="noborders" id="reginsts.ad7771.general_err1">
+   <tr><th class="noborders">Offset</th><th width="33%" class="noborders">Name</th><th class="noborders">Reset</th></tr>
+   <tr id="inst.ad7771.general_err1"><td class="noborders">0x58</td><td class="noborders">general_err1</td><td class="noborders">0x00</td></tr>
+</table>
+<table class="map" id="layout.ad7771.general_err1">
+  <tr><td width="*" class="map"></td>
+<td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td></tr>
+   <tr><td class="map">Bit</td><td class="map" colspan="4">7</td><td class="map" colspan="4">6</td><td class="map" colspan="4">5</td><td class="map" colspan="4">4</td><td class="map" colspan="4">3</td><td class="map" colspan="4">2</td><td class="map" colspan="4">1</td><td class="map" colspan="4">0</td></tr>
+   <tr><td class="map">Field</td><td class="rsvd" colspan="8"></td><td class="mapv" colspan="4">memmap_crc_err</td><td class="map" colspan="4">rom_crc_err</td><td class="mapv" colspan="4">spi_clk_count_err</td><td class="mapv" colspan="4">spi_invalid_read_err</td><td class="mapv" colspan="4">spi_invalid_write_err</td><td class="map" colspan="4">spi_crc_err</td></tr>
+   <tr><td class="map">Reset</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td></tr>
+</table>
+<table id="fields.ad7771.general_err1">
+   <tr><th>Bits</th><th>Name</th><th>Access</th><th>Reset</th><th>Description</th></tr>
+   <tr id="ad7771.general_err1.memmap_crc_err"><td>5</td><td>memmap_crc_err</td><td>RO</td><td>0</td><td>A CRC of the memory map contents is run periodically to check for errors</td></tr>
+   <tr id="ad7771.general_err1.rom_crc_err"><td>4</td><td>rom_crc_err</td><td>RO</td><td>0</td><td>A CRC of the fuse contents is run periodically to check for errors in the fuses</td></tr>
+   <tr id="ad7771.general_err1.spi_clk_count_err"><td>3</td><td>spi_clk_count_err</td><td>RO</td><td>0</td><td>SPI clock counter error</td></tr>
+   <tr id="ad7771.general_err1.spi_invalid_read_err"><td>2</td><td>spi_invalid_read_err</td><td>RO</td><td>0</td><td>SPI invalid read address</td></tr>
+   <tr id="ad7771.general_err1.spi_invalid_write_err"><td>1</td><td>spi_invalid_write_err</td><td>RO</td><td>0</td><td>SPI invalid write address</td></tr>
+   <tr id="ad7771.general_err1.spi_crc_err"><td>0</td><td>spi_crc_err</td><td>RO</td><td>0</td><td>SPI CRC error</td></tr>
+</table>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#regmap.ad7771">Page summary</a>
+<h3 id="ad7771.general_err1_en">1.1.24 General Error 1 Enable (general_err1_en)</h3>
+<table class="noborders" id="reginsts.ad7771.general_err1_en">
+   <tr><th class="noborders">Offset</th><th width="33%" class="noborders">Name</th><th class="noborders">Reset</th></tr>
+   <tr id="inst.ad7771.general_err1_en"><td class="noborders">0x59</td><td class="noborders">general_err1_en</td><td class="noborders">0x3E</td></tr>
+</table>
+<table class="map" id="layout.ad7771.general_err1_en">
+  <tr><td width="*" class="map"></td>
+<td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td></tr>
+   <tr><td class="map">Bit</td><td class="map" colspan="4">7</td><td class="map" colspan="4">6</td><td class="map" colspan="4">5</td><td class="map" colspan="4">4</td><td class="map" colspan="4">3</td><td class="map" colspan="4">2</td><td class="map" colspan="4">1</td><td class="map" colspan="4">0</td></tr>
+   <tr><td class="map">Field</td><td class="rsvd" colspan="8"></td><td class="mapv" colspan="4">memmap_crc_err_en</td><td class="mapv" colspan="4">rom_crc_err_en</td><td class="mapv" colspan="4">spi_clk_count_err_en</td><td class="mapv" colspan="4">spi_invalid_read_err_en</td><td class="mapv" colspan="4">spi_invalid_write_err_en</td><td class="mapv" colspan="4">spi_crc_err_en</td></tr>
+   <tr><td class="map">Reset</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">1</td><td class="map" colspan="4">1</td><td class="map" colspan="4">1</td><td class="map" colspan="4">1</td><td class="map" colspan="4">1</td><td class="map" colspan="4">0</td></tr>
+</table>
+<table id="fields.ad7771.general_err1_en">
+   <tr><th>Bits</th><th>Name</th><th>Access</th><th>Reset</th><th>Description</th></tr>
+   <tr id="ad7771.general_err1_en.memmap_crc_err_en"><td>5</td><td>memmap_crc_err_en</td><td>RW</td><td>1</td><td>Enable a CRC of the memory map contents is run periodically to check for errors</td></tr>
+   <tr id="ad7771.general_err1_en.rom_crc_err_en"><td>4</td><td>rom_crc_err_en</td><td>RW</td><td>1</td><td>Enable a CRC of the fuse contents is run periodically to check for errors in the fuses</td></tr>
+   <tr id="ad7771.general_err1_en.spi_clk_count_err_en"><td>3</td><td>spi_clk_count_err_en</td><td>RW</td><td>1</td><td>Enable SPI clock counter error</td></tr>
+   <tr id="ad7771.general_err1_en.spi_invalid_read_err_en"><td>2</td><td>spi_invalid_read_err_en</td><td>RW</td><td>1</td><td>Enable SPI invalid read address</td></tr>
+   <tr id="ad7771.general_err1_en.spi_invalid_write_err_en"><td>1</td><td>spi_invalid_write_err_en</td><td>RW</td><td>1</td><td>Enable SPI invalid write address</td></tr>
+   <tr id="ad7771.general_err1_en.spi_crc_err_en"><td>0</td><td>spi_crc_err_en</td><td>RW</td><td>0</td><td>Enable SPI CRC error</td></tr>
+</table>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#regmap.ad7771">Page summary</a>
+<h3 id="ad7771.general_err2">1.1.25 General Error 2 (general_err2)</h3>
+<table class="noborders" id="reginsts.ad7771.general_err2">
+   <tr><th class="noborders">Offset</th><th width="33%" class="noborders">Name</th><th class="noborders">Reset</th></tr>
+   <tr id="inst.ad7771.general_err2"><td class="noborders">0x5A</td><td class="noborders">general_err2</td><td class="noborders">0x00</td></tr>
+</table>
+<table class="map" id="layout.ad7771.general_err2">
+  <tr><td width="*" class="map"></td>
+<td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td></tr>
+   <tr><td class="map">Bit</td><td class="map" colspan="4">7</td><td class="map" colspan="4">6</td><td class="map" colspan="4">5</td><td class="map" colspan="4">4</td><td class="map" colspan="4">3</td><td class="map" colspan="4">2</td><td class="map" colspan="4">1</td><td class="map" colspan="4">0</td></tr>
+   <tr><td class="map">Field</td><td class="rsvd" colspan="8"></td><td class="mapv" colspan="4">reset_detected</td><td class="mapv" colspan="4">ext_mclk_switch_err</td><td class="rsvd" colspan="4"></td><td class="mapv" colspan="4">aldo1_psm_err</td><td class="mapv" colspan="4">aldo2_psm_err</td><td class="mapv" colspan="4">dldo_psm_err</td></tr>
+   <tr><td class="map">Reset</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td></tr>
+</table>
+<table id="fields.ad7771.general_err2">
+   <tr><th>Bits</th><th>Name</th><th>Access</th><th>Reset</th><th>Description</th></tr>
+   <tr id="ad7771.general_err2.reset_detected"><td>5</td><td>reset_detected</td><td>RO</td><td>0</td><td>Reset Detected</td></tr>
+   <tr id="ad7771.general_err2.ext_mclk_switch_err"><td>4</td><td>ext_mclk_switch_err</td><td>RO</td><td>0</td><td>Clock Not Switched Over</td></tr>
+   <tr id="ad7771.general_err2.aldo1_psm_err"><td>2</td><td>aldo1_psm_err</td><td>RO</td><td>0</td><td>AREG1CAP Power Supply Error</td></tr>
+   <tr id="ad7771.general_err2.aldo2_psm_err"><td>1</td><td>aldo2_psm_err</td><td>RO</td><td>0</td><td>AREG2CAP Power Supply Error</td></tr>
+   <tr id="ad7771.general_err2.dldo_psm_err"><td>0</td><td>dldo_psm_err</td><td>RO</td><td>0</td><td>DREGCAP Power Supply Error</td></tr>
+</table>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#regmap.ad7771">Page summary</a>
+<h3 id="ad7771.general_err2_en">1.1.26 General Error 2 (general_err2_en)</h3>
+<table class="noborders" id="reginsts.ad7771.general_err2_en">
+   <tr><th class="noborders">Offset</th><th width="33%" class="noborders">Name</th><th class="noborders">Reset</th></tr>
+   <tr id="inst.ad7771.general_err2_en"><td class="noborders">0x5B</td><td class="noborders">general_err2_en</td><td class="noborders">0x2C</td></tr>
+</table>
+<table class="map" id="layout.ad7771.general_err2_en">
+  <tr><td width="*" class="map"></td>
+<td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td></tr>
+   <tr><td class="map">Bit</td><td class="map" colspan="4">7</td><td class="map" colspan="4">6</td><td class="map" colspan="4">5</td><td class="map" colspan="4">4</td><td class="map" colspan="4">3</td><td class="map" colspan="4">2</td><td class="map" colspan="4">1</td><td class="map" colspan="4">0</td></tr>
+   <tr><td class="map">Field</td><td class="rsvd" colspan="8"></td><td class="mapv" colspan="4">reset_detected_en</td><td class="rsvd" colspan="4"></td><td class="mapv" colspan="4">aldo_psm_err_en</td><td class="mapv" colspan="4">dldo_psm_err_en</td><td class="map" colspan="8">ldo_psm_trip_test</td></tr>
+   <tr><td class="map">Reset</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">1</td><td class="map" colspan="4">0</td><td class="map" colspan="4">1</td><td class="map" colspan="4">1</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td></tr>
+</table>
+<table id="fields.ad7771.general_err2_en">
+   <tr><th>Bits</th><th>Name</th><th>Access</th><th>Reset</th><th>Description</th></tr>
+   <tr id="ad7771.general_err2_en.reset_detected_en"><td>5</td><td>reset_detected_en</td><td>RW</td><td>1</td><td>Enable Reset Detected</td></tr>
+   <tr id="ad7771.general_err2_en.aldo_psm_err_en"><td>3</td><td>aldo_psm_err_en</td><td>RW</td><td>1</td><td>Enable analog Power Supply Error</td></tr>
+   <tr id="ad7771.general_err2_en.dldo_psm_err_en"><td>2</td><td>dldo_psm_err_en</td><td>RW</td><td>1</td><td>Enable digital Power Supply Error</td></tr>
+   <tr id="ad7771.general_err2_en.ldo_psm_trip_test"><td>1:0</td><td>ldo_psm_trip_test</td><td>Pulse</td><td>0</td><td>Run PSM Trip<br/>00 — no trip detect test enabled<br/>01 — run trip detect test on AREG1CAP<br/>10 — run trip detect test on AREG2CAP<br/>11 — run trip detect test on DREGCAP</td></tr>
+</table>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#regmap.ad7771">Page summary</a>
+<h3 id="ad7771.error_status1">1.1.27 Error Status 1 (error_status1)</h3>
+<table class="noborders" id="reginsts.ad7771.error_status1">
+   <tr><th class="noborders">Offset</th><th width="33%" class="noborders">Name</th><th class="noborders">Reset</th></tr>
+   <tr id="inst.ad7771.error_status1"><td class="noborders">0x5C</td><td class="noborders">error_status1</td><td class="noborders">0x00</td></tr>
+</table>
+<table class="map" id="layout.ad7771.error_status1">
+  <tr><td width="*" class="map"></td>
+<td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td></tr>
+   <tr><td class="map">Bit</td><td class="map" colspan="4">7</td><td class="map" colspan="4">6</td><td class="map" colspan="4">5</td><td class="map" colspan="4">4</td><td class="map" colspan="4">3</td><td class="map" colspan="4">2</td><td class="map" colspan="4">1</td><td class="map" colspan="4">0</td></tr>
+   <tr><td class="map">Field</td><td class="rsvd" colspan="8"></td><td class="map" colspan="4">chip_error1</td><td class="map" colspan="4">err_loc_ch4</td><td class="map" colspan="4">err_loc_ch3</td><td class="map" colspan="4">err_loc_ch2</td><td class="map" colspan="4">err_loc_ch1</td><td class="map" colspan="4">err_loc_ch0</td></tr>
+   <tr><td class="map">Reset</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td></tr>
+</table>
+<table id="fields.ad7771.error_status1">
+   <tr><th>Bits</th><th>Name</th><th>Access</th><th>Reset</th><th>Description</th></tr>
+   <tr id="ad7771.error_status1.chip_error1"><td>5</td><td>chip_error1</td><td>RO</td><td>0</td><td>High when any error bit is high</td></tr>
+   <tr id="ad7771.error_status1.err_loc_ch4"><td>4</td><td>err_loc_ch4</td><td>RO</td><td>0</td><td>Error specific to channel 4</td></tr>
+   <tr id="ad7771.error_status1.err_loc_ch3"><td>3</td><td>err_loc_ch3</td><td>RO</td><td>0</td><td>Error specific to channel 3</td></tr>
+   <tr id="ad7771.error_status1.err_loc_ch2"><td>2</td><td>err_loc_ch2</td><td>RO</td><td>0</td><td>Error specific to channel 2</td></tr>
+   <tr id="ad7771.error_status1.err_loc_ch1"><td>1</td><td>err_loc_ch1</td><td>RO</td><td>0</td><td>Error specific to channel 1</td></tr>
+   <tr id="ad7771.error_status1.err_loc_ch0"><td>0</td><td>err_loc_ch0</td><td>RO</td><td>0</td><td>Error specific to channel 0</td></tr>
+</table>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#regmap.ad7771">Page summary</a>
+<h3 id="ad7771.error_status2">1.1.28 Error Status 2 (error_status2)</h3>
+<table class="noborders" id="reginsts.ad7771.error_status2">
+   <tr><th class="noborders">Offset</th><th width="33%" class="noborders">Name</th><th class="noborders">Reset</th></tr>
+   <tr id="inst.ad7771.error_status2"><td class="noborders">0x5D</td><td class="noborders">error_status2</td><td class="noborders">0x00</td></tr>
+</table>
+<table class="map" id="layout.ad7771.error_status2">
+  <tr><td width="*" class="map"></td>
+<td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td></tr>
+   <tr><td class="map">Bit</td><td class="map" colspan="4">7</td><td class="map" colspan="4">6</td><td class="map" colspan="4">5</td><td class="map" colspan="4">4</td><td class="map" colspan="4">3</td><td class="map" colspan="4">2</td><td class="map" colspan="4">1</td><td class="map" colspan="4">0</td></tr>
+   <tr><td class="map">Field</td><td class="rsvd" colspan="8"></td><td class="map" colspan="4">chip_error2</td><td class="mapv" colspan="4">err_loc_gen1</td><td class="mapv" colspan="4">err_loc_gen0</td><td class="map" colspan="4">err_loc_ch7</td><td class="map" colspan="4">err_loc_ch6</td><td class="map" colspan="4">err_loc_ch5</td></tr>
+   <tr><td class="map">Reset</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td></tr>
+</table>
+<table id="fields.ad7771.error_status2">
+   <tr><th>Bits</th><th>Name</th><th>Access</th><th>Reset</th><th>Description</th></tr>
+   <tr id="ad7771.error_status2.chip_error2"><td>5</td><td>chip_error2</td><td>RO</td><td>0</td><td>High when any error bit is high</td></tr>
+   <tr id="ad7771.error_status2.err_loc_gen1"><td>4</td><td>err_loc_gen1</td><td>RO</td><td>0</td><td>Error specific to gen_err[2]</td></tr>
+   <tr id="ad7771.error_status2.err_loc_gen0"><td>3</td><td>err_loc_gen0</td><td>RO</td><td>0</td><td>Error specific to gen_err[1]</td></tr>
+   <tr id="ad7771.error_status2.err_loc_ch7"><td>2</td><td>err_loc_ch7</td><td>RO</td><td>0</td><td>Error specific to channel 7</td></tr>
+   <tr id="ad7771.error_status2.err_loc_ch6"><td>1</td><td>err_loc_ch6</td><td>RO</td><td>0</td><td>Error specific to channel 6</td></tr>
+   <tr id="ad7771.error_status2.err_loc_ch5"><td>0</td><td>err_loc_ch5</td><td>RO</td><td>0</td><td>Error specific to channel 5</td></tr>
+</table>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#regmap.ad7771">Page summary</a>
+<h3 id="ad7771.error_status3">1.1.29 Error Status 3 (error_status3)</h3>
+<table class="noborders" id="reginsts.ad7771.error_status3">
+   <tr><th class="noborders">Offset</th><th width="33%" class="noborders">Name</th><th class="noborders">Reset</th></tr>
+   <tr id="inst.ad7771.error_status3"><td class="noborders">0x5E</td><td class="noborders">error_status3</td><td class="noborders">0x00</td></tr>
+</table>
+<table class="map" id="layout.ad7771.error_status3">
+  <tr><td width="*" class="map"></td>
+<td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td></tr>
+   <tr><td class="map">Bit</td><td class="map" colspan="4">7</td><td class="map" colspan="4">6</td><td class="map" colspan="4">5</td><td class="map" colspan="4">4</td><td class="map" colspan="4">3</td><td class="map" colspan="4">2</td><td class="map" colspan="4">1</td><td class="map" colspan="4">0</td></tr>
+   <tr><td class="map">Field</td><td class="rsvd" colspan="8"></td><td class="map" colspan="4">chip_error3</td><td class="mapv" colspan="4">init_complete</td><td class="mapv" colspan="4">err_loc_sat_ch3</td><td class="mapv" colspan="4">err_loc_sat_ch2</td><td class="mapv" colspan="4">err_loc_sat_ch1</td><td class="mapv" colspan="4">err_loc_sat_ch0</td></tr>
+   <tr><td class="map">Reset</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td></tr>
+</table>
+<table id="fields.ad7771.error_status3">
+   <tr><th>Bits</th><th>Name</th><th>Access</th><th>Reset</th><th>Description</th></tr>
+   <tr id="ad7771.error_status3.chip_error3"><td>5</td><td>chip_error3</td><td>RO</td><td>0</td><td>High when any error bit is high</td></tr>
+   <tr id="ad7771.error_status3.init_complete"><td>4</td><td>init_complete</td><td>RO</td><td>0</td><td>Fuse init complete</td></tr>
+   <tr id="ad7771.error_status3.err_loc_sat_ch3"><td>3</td><td>err_loc_sat_ch3</td><td>RO</td><td>0</td><td>Sat Error specific to channel 3 / 4</td></tr>
+   <tr id="ad7771.error_status3.err_loc_sat_ch2"><td>2</td><td>err_loc_sat_ch2</td><td>RO</td><td>0</td><td>Sat Error specific to channel 2 / 3</td></tr>
+   <tr id="ad7771.error_status3.err_loc_sat_ch1"><td>1</td><td>err_loc_sat_ch1</td><td>RO</td><td>0</td><td>Sat Error specific to channel 1 / 2</td></tr>
+   <tr id="ad7771.error_status3.err_loc_sat_ch0"><td>0</td><td>err_loc_sat_ch0</td><td>RO</td><td>0</td><td>Sat Error specific to channel 0 / 1</td></tr>
+</table>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#regmap.ad7771">Page summary</a>
+<h3 id="ad7771.src_n_msb">1.1.30 Sample Rate converter N MSB (src_n_msb)</h3>
+<table class="noborders" id="reginsts.ad7771.src_n_msb">
+   <tr><th class="noborders">Offset</th><th width="33%" class="noborders">Name</th><th class="noborders">Reset</th></tr>
+   <tr id="inst.ad7771.src_n_msb"><td class="noborders">0x5F</td><td class="noborders">src_n_msb</td><td class="noborders">0x00</td></tr>
+</table>
+<table class="map" id="layout.ad7771.src_n_msb">
+  <tr><td width="*" class="map"></td>
+<td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td></tr>
+   <tr><td class="map">Bit</td><td class="map" colspan="4">7</td><td class="map" colspan="4">6</td><td class="map" colspan="4">5</td><td class="map" colspan="4">4</td><td class="map" colspan="4">3</td><td class="map" colspan="4">2</td><td class="map" colspan="4">1</td><td class="map" colspan="4">0</td></tr>
+   <tr><td class="map">Field</td><td class="rsvd" colspan="16"></td><td class="map" colspan="16">src_n</td></tr>
+   <tr><td class="map">Reset</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td></tr>
+</table>
+<table id="fields.ad7771.src_n_msb">
+   <tr><th>Bits</th><th>Name</th><th>Access</th><th>Reset</th><th>Description</th></tr>
+   <tr id="ad7771.src_n_msb.src_n"><td>3:0</td><td>src_n</td><td>RW</td><td>0</td><td>Sample Rate converter N[11:8]</td></tr>
+</table>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#regmap.ad7771">Page summary</a>
+<h3 id="ad7771.src_n_lsb">1.1.31 Sample Rate converter N LSB (src_n_lsb)</h3>
+<table class="noborders" id="reginsts.ad7771.src_n_lsb">
+   <tr><th class="noborders">Offset</th><th width="33%" class="noborders">Name</th><th class="noborders">Reset</th></tr>
+   <tr id="inst.ad7771.src_n_lsb"><td class="noborders">0x60</td><td class="noborders">src_n_lsb</td><td class="noborders">0x00</td></tr>
+</table>
+<table class="map" id="layout.ad7771.src_n_lsb">
+  <tr><td width="*" class="map"></td>
+<td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td></tr>
+   <tr><td class="map">Bit</td><td class="map" colspan="4">7</td><td class="map" colspan="4">6</td><td class="map" colspan="4">5</td><td class="map" colspan="4">4</td><td class="map" colspan="4">3</td><td class="map" colspan="4">2</td><td class="map" colspan="4">1</td><td class="map" colspan="4">0</td></tr>
+   <tr><td class="map">Field</td><td class="map" colspan="32">src_n</td></tr>
+   <tr><td class="map">Reset</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td></tr>
+</table>
+<table id="fields.ad7771.src_n_lsb">
+   <tr><th>Bits</th><th>Name</th><th>Access</th><th>Reset</th><th>Description</th></tr>
+   <tr id="ad7771.src_n_lsb.src_n"><td>7:0</td><td>src_n</td><td>RW</td><td>0</td><td>Sample Rate converter N[7:0]</td></tr>
+</table>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#regmap.ad7771">Page summary</a>
+<h3 id="ad7771.src_if_msb">1.1.32 Sample Rate converter IF MSB (src_if_msb)</h3>
+<table class="noborders" id="reginsts.ad7771.src_if_msb">
+   <tr><th class="noborders">Offset</th><th width="33%" class="noborders">Name</th><th class="noborders">Reset</th></tr>
+   <tr id="inst.ad7771.src_if_msb"><td class="noborders">0x61</td><td class="noborders">src_if_msb</td><td class="noborders">0x00</td></tr>
+</table>
+<table class="map" id="layout.ad7771.src_if_msb">
+  <tr><td width="*" class="map"></td>
+<td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td></tr>
+   <tr><td class="map">Bit</td><td class="map" colspan="4">7</td><td class="map" colspan="4">6</td><td class="map" colspan="4">5</td><td class="map" colspan="4">4</td><td class="map" colspan="4">3</td><td class="map" colspan="4">2</td><td class="map" colspan="4">1</td><td class="map" colspan="4">0</td></tr>
+   <tr><td class="map">Field</td><td class="map" colspan="32">src_if</td></tr>
+   <tr><td class="map">Reset</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td></tr>
+</table>
+<table id="fields.ad7771.src_if_msb">
+   <tr><th>Bits</th><th>Name</th><th>Access</th><th>Reset</th><th>Description</th></tr>
+   <tr id="ad7771.src_if_msb.src_if"><td>7:0</td><td>src_if</td><td>RW</td><td>0</td><td>Sample Rate converter IF[15:8]</td></tr>
+</table>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#regmap.ad7771">Page summary</a>
+<h3 id="ad7771.src_if_lsb">1.1.33 Sample Rate converter IF LSB (src_if_lsb)</h3>
+<table class="noborders" id="reginsts.ad7771.src_if_lsb">
+   <tr><th class="noborders">Offset</th><th width="33%" class="noborders">Name</th><th class="noborders">Reset</th></tr>
+   <tr id="inst.ad7771.src_if_lsb"><td class="noborders">0x62</td><td class="noborders">src_if_lsb</td><td class="noborders">0x00</td></tr>
+</table>
+<table class="map" id="layout.ad7771.src_if_lsb">
+  <tr><td width="*" class="map"></td>
+<td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td></tr>
+   <tr><td class="map">Bit</td><td class="map" colspan="4">7</td><td class="map" colspan="4">6</td><td class="map" colspan="4">5</td><td class="map" colspan="4">4</td><td class="map" colspan="4">3</td><td class="map" colspan="4">2</td><td class="map" colspan="4">1</td><td class="map" colspan="4">0</td></tr>
+   <tr><td class="map">Field</td><td class="map" colspan="32">src_if</td></tr>
+   <tr><td class="map">Reset</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td></tr>
+</table>
+<table id="fields.ad7771.src_if_lsb">
+   <tr><th>Bits</th><th>Name</th><th>Access</th><th>Reset</th><th>Description</th></tr>
+   <tr id="ad7771.src_if_lsb.src_if"><td>7:0</td><td>src_if</td><td>RW</td><td>0</td><td>Sample Rate converter IF[7:0]</td></tr>
+</table>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#regmap.ad7771">Page summary</a>
+<h3 id="ad7771.src_load">1.1.34 Sample Rate converter load (src_load)</h3>
+<table class="noborders" id="reginsts.ad7771.src_load">
+   <tr><th class="noborders">Offset</th><th width="33%" class="noborders">Name</th><th class="noborders">Reset</th></tr>
+   <tr id="inst.ad7771.src_load"><td class="noborders">0x63</td><td class="noborders">src_load</td><td class="noborders">0x00</td></tr>
+</table>
+<table class="map" id="layout.ad7771.src_load">
+  <tr><td width="*" class="map"></td>
+<td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td><td width="22" class="map"></td></tr>
+   <tr><td class="map">Bit</td><td class="map" colspan="4">7</td><td class="map" colspan="4">6</td><td class="map" colspan="4">5</td><td class="map" colspan="4">4</td><td class="map" colspan="4">3</td><td class="map" colspan="4">2</td><td class="map" colspan="4">1</td><td class="map" colspan="4">0</td></tr>
+   <tr><td class="map">Field</td><td class="map" colspan="4">load_source</td><td class="rsvd" colspan="24"></td><td class="map" colspan="4">load_update</td></tr>
+   <tr><td class="map">Reset</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td><td class="map" colspan="4">0</td></tr>
+</table>
+<table id="fields.ad7771.src_load">
+   <tr><th>Bits</th><th>Name</th><th>Access</th><th>Reset</th><th>Description</th></tr>
+   <tr id="ad7771.src_load.load_source"><td>7</td><td>load_source</td><td>RW</td><td>0</td><td>Select which option to load an SRC update</td></tr>
+   <tr id="ad7771.src_load.load_update"><td>0</td><td>load_update</td><td>Pulse</td><td>0</td><td>Assert to load SRC registers into SRC</td></tr>
+</table>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#regmap.ad7771">Page summary</a>
