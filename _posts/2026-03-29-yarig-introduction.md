@@ -1,6 +1,8 @@
 ---
 layout: post
 title: Introduction to YARIG
+description: "YARIG: a Rust register-interface generator for SystemVerilog, SVD, C, Python, HTML, and more."
+keywords: [yarig, rust, register, systemverilog, csr, embedded]
 ---
 
 ## What is YARIG ?

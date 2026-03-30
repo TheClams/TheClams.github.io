@@ -1,6 +1,8 @@
 ---
 layout: post
 title: LoRa Extended Ranging mode in LR2021
+description: "LR2021 LoRa extended ranging: bias removal, better accuracy, and speed hints."
+keywords: [lr2021, lora, ranging, doppler, rust, embedded]
 ---
 
 ## Introduction to LoRa Ranging
